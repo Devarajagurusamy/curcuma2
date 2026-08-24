@@ -172,7 +172,7 @@ const scientificBenefits: BenefitCard[] = [
 
 export default function ScientificBenefits() {
   return (
-    <section className="relative w-full py-16 sm:py-24 overflow-hidden bg-[#FAF6F0]">
+    <section id="benefits" className="relative w-full py-16 sm:py-24 overflow-hidden bg-[#FAF6F0] scroll-mt-20">
       
       {/* Background Ambience & Delicate Leaves */}
       <div className="absolute inset-0 pointer-events-none">

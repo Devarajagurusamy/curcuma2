@@ -41,7 +41,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 xl:px-12 py-2">
+    <section id="home" className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 xl:px-12 py-2 scroll-mt-20">
       {/* Landscape Carousel Container */}
       <div className="relative w-full aspect-[2.4/1] sm:aspect-[2.7/1] lg:aspect-[2.85/1] max-h-[480px] rounded-[18px] sm:rounded-[24px] bg-[#14261d] overflow-hidden shadow-[0_6px_30px_rgba(0,0,0,0.12)] border border-gray-100 group select-none">
         

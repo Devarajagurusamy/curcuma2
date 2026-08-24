@@ -44,7 +44,7 @@ const heritageSteps = [
 
 export default function BotanicalHeritage() {
   return (
-    <section className="relative w-full py-16 sm:py-24 overflow-hidden bg-[#FBF7F2]">
+    <section id="story" className="relative w-full py-16 sm:py-24 overflow-hidden bg-[#FBF7F2] scroll-mt-20">
       {/* Background Graphic Image (User-Provided) */}
       <div 
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat pointer-events-none opacity-90"

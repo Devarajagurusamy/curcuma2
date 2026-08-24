@@ -373,7 +373,7 @@ export default function ScienceEvidence() {
   };
 
   return (
-    <section className="relative w-full py-16 sm:py-20 bg-[#F7F2EC] overflow-hidden border-y border-[#eadecf]/70">
+    <section id="science" className="relative w-full py-16 sm:py-20 bg-[#F7F2EC] overflow-hidden border-y border-[#eadecf]/70 scroll-mt-20">
       
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 xl:px-12">
         

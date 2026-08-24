@@ -118,7 +118,7 @@ export default function FAQSection() {
           </p>
 
           {/* Category Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-5">
+          <div className="flex items-center sm:justify-center gap-2 pt-5 overflow-x-auto scrollbar-none pb-2 sm:pb-0 px-2">
             {[
               { id: "all", label: "All Questions" },
               { id: "science", label: "Authenticity & Science" },
@@ -129,7 +129,7 @@ export default function FAQSection() {
               <button
                 key={tab.id}
                 onClick={() => setActiveCategory(tab.id)}
-                className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex-shrink-0 ${
                   activeCategory === tab.id
                     ? "bg-[#142319] text-[#e5b869] shadow-md scale-105"
                     : "bg-white text-[#525f57] border border-[#e5d9c7] hover:bg-[#f4ece1] hover:text-[#142319]"

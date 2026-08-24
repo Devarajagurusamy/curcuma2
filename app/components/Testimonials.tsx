@@ -79,7 +79,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="w-full bg-[#0d2218] py-14 sm:py-20 text-white relative overflow-hidden border-t border-[#183929]">
+    <section id="reviews" className="w-full bg-[#0d2218] py-14 sm:py-20 text-white relative overflow-hidden border-t border-[#183929] scroll-mt-20">
       
       {/* Subtle Background Glow */}
       <div className="absolute inset-0 pointer-events-none">

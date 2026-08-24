@@ -7,7 +7,11 @@ import {
   X
 } from "lucide-react";
 
-export default function Navbar() {
+interface NavbarProps {
+  onOpenOrderModal?: () => void;
+}
+
+export default function Navbar({ onOpenOrderModal }: NavbarProps) {
   const [activeTab, setActiveTab] = useState("HOME");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -61,28 +65,29 @@ export default function Navbar() {
           
           
 
-          {/* Solid Gold ORDER NOW CTA Button */}
-          <a
-            href="#order"
+          {/* Solid Gold ORDER NOW CTA Button (Opens Order Popup) */}
+          <button
+            onClick={onOpenOrderModal}
             className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#c59b3f] hover:bg-[#b08730] text-white text-xs xl:text-sm font-extrabold tracking-[0.08em] uppercase shadow-[0_2px_12px_rgba(197,155,63,0.35)] hover:shadow-[0_4px_18px_rgba(197,155,63,0.55)] hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 cursor-pointer whitespace-nowrap"
           >
             <span className="w-4 h-4 rounded-full bg-white/25 flex items-center justify-center text-[10px] font-black text-white">
               ★
             </span>
             <span>ORDER NOW</span>
-          </a>
+          </button>
 
         </div>
 
         {/* Mobile Right Controls (Cart + Hamburger) */}
         <div className="flex lg:hidden items-center gap-3">
           <button 
+            onClick={onOpenOrderModal}
             aria-label="Cart"
             className="relative p-1 text-[#22312a] hover:text-[#c59b3f]"
           >
             <ShoppingCart className="w-5 h-5 stroke-[1.8]" />
             <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#c59b3f] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
-              0
+              1
             </span>
           </button>
 
@@ -120,13 +125,15 @@ export default function Navbar() {
           </div>
 
           <div className="pt-2 border-t border-gray-100">
-            <a
-              href="#order"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-full bg-[#c59b3f] text-white text-xs font-bold tracking-wider uppercase shadow-md"
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                if (onOpenOrderModal) onOpenOrderModal();
+              }}
+              className="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-full bg-[#c59b3f] text-white text-xs font-bold tracking-wider uppercase shadow-md cursor-pointer"
             >
               <span>★ ORDER NOW</span>
-            </a>
+            </button>
           </div>
 
         </div>
