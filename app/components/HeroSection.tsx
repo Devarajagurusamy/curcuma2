@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Easily configure or replace carousel banner images here:
@@ -9,42 +8,42 @@ const carouselSlides = [
   {
     id: 1,
     imageSrc: "/images/carousel-placeholder.svg", // Replace with your original banner image (e.g. /images/banner-1.png)
-    altText: "CurcumaCaesia Malaysia's University-Verified Black Turmeric",
+    altText: "Banner 1 - CurcumaCaesia Malaysian Royal Gold",
   },
   {
     id: 2,
     imageSrc: "/images/carousel-placeholder.svg",
-    altText: "Slide 2 - Pure Natural Single Ingredient",
+    altText: "Banner 2",
   },
   {
     id: 3,
     imageSrc: "/images/carousel-placeholder.svg",
-    altText: "Slide 3 - 30-Day Trial Offer",
+    altText: "Banner 3",
   },
   {
     id: 4,
     imageSrc: "/images/carousel-placeholder.svg",
-    altText: "Slide 4 - Johor Heritage Since 1930",
+    altText: "Banner 4",
   },
   {
     id: 5,
     imageSrc: "/images/carousel-placeholder.svg",
-    altText: "Slide 5 - University Research & Purity",
+    altText: "Banner 5",
   },
   {
     id: 6,
     imageSrc: "/images/carousel-placeholder.svg",
-    altText: "Slide 6 - Joint Comfort & Immune Defense",
+    altText: "Banner 6",
   },
   {
     id: 7,
     imageSrc: "/images/carousel-placeholder.svg",
-    altText: "Slide 7 - Natural Energy & Vitality",
+    altText: "Banner 7",
   },
   {
     id: 8,
     imageSrc: "/images/carousel-placeholder.svg",
-    altText: "Slide 8 - The Gold of Wellness",
+    altText: "Banner 8",
   },
 ];
 
@@ -60,9 +59,9 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative w-full max-w-[1440px] mx-auto px-3 sm:px-6 my-2">
-      {/* Outer Rounded Carousel Container */}
-      <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[1.95/1] max-h-[640px] rounded-[24px] sm:rounded-[36px] bg-black overflow-hidden shadow-2xl border border-black/20 group select-none">
+    <section className="w-full max-w-[1380px] mx-auto px-4 sm:px-8 py-2">
+      {/* Compact Rounded Carousel Container matching CARiNG reference */}
+      <div className="relative w-full aspect-[2.4/1] sm:aspect-[2.7/1] lg:aspect-[2.85/1] max-h-[460px] rounded-[18px] sm:rounded-[24px] bg-black overflow-hidden shadow-[0_4px_25px_rgba(0,0,0,0.08)] border border-gray-100 group select-none">
         
         {/* Carousel Image Slides */}
         <div className="relative w-full h-full">
@@ -73,37 +72,32 @@ export default function HeroSection() {
                 index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
               }`}
             >
-              {/* Entire Carousel Image Banner */}
+              {/* Full Carousel Image Banner */}
               <img
                 src={slide.imageSrc}
                 alt={slide.altText}
                 className="w-full h-full object-cover bg-black"
               />
-
-              {/* Subdued placeholder indicator (disappears once replaced) */}
-              <div className="absolute top-4 left-4 z-20 px-3 py-1.5 rounded-md bg-black/60 backdrop-blur-sm border border-white/10 text-white/40 text-[10px] sm:text-xs font-mono tracking-wider">
-                [Carousel Banner Placeholder #{slide.id}]
-              </div>
             </div>
           ))}
         </div>
 
-        {/* Floating Left Arrow Navigation */}
+        {/* Minimalist Left Chevron Arrow */}
         <button
           onClick={prevSlide}
           aria-label="Previous Slide"
-          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white text-[#11241a] shadow-xl hover:bg-[#faf7f2] hover:scale-105 active:scale-95 flex items-center justify-center transition-all z-30 group/btn cursor-pointer"
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-2 text-white/80 hover:text-white transition-all z-30 group/btn cursor-pointer drop-shadow-md hover:scale-110"
         >
-          <ChevronLeft className="w-5 h-5 stroke-[2.5] group-hover/btn:-translate-x-0.5 transition-transform" />
+          <ChevronLeft className="w-8 h-8 sm:w-11 sm:h-11 stroke-[1.5] group-hover/btn:-translate-x-0.5 transition-transform" />
         </button>
 
-        {/* Floating Right Arrow Navigation */}
+        {/* Minimalist Right Chevron Arrow */}
         <button
           onClick={nextSlide}
           aria-label="Next Slide"
-          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white text-[#11241a] shadow-xl hover:bg-[#faf7f2] hover:scale-105 active:scale-95 flex items-center justify-center transition-all z-30 group/btn cursor-pointer"
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-2 text-white/80 hover:text-white transition-all z-30 group/btn cursor-pointer drop-shadow-md hover:scale-110"
         >
-          <ChevronRight className="w-5 h-5 stroke-[2.5] group-hover/btn:translate-x-0.5 transition-transform" />
+          <ChevronRight className="w-8 h-8 sm:w-11 sm:h-11 stroke-[1.5] group-hover/btn:translate-x-0.5 transition-transform" />
         </button>
 
         {/* Bottom Pagination Dots */}
@@ -115,7 +109,7 @@ export default function HeroSection() {
               aria-label={`Go to slide ${index + 1}`}
               className={`transition-all duration-300 rounded-full cursor-pointer ${
                 index === currentIndex
-                  ? "w-4 h-2 bg-[#e58e1b] ring-2 ring-[#e58e1b]/40"
+                  ? "w-2.5 h-2.5 bg-white shadow-md scale-110"
                   : "w-2 h-2 bg-white/40 hover:bg-white/70"
               }`}
             />
