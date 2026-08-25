@@ -96,8 +96,8 @@ export default function Navbar({ onOpenOrderModal }: NavbarProps) {
         <a href="#" className="flex items-center group flex-shrink-0">
           <img
             src="/images/logo.png"
-            alt="Malaysian Royal Gold - Curcuma Caesia Roxb."
-            className="h-16 sm:h-20 md:h-22 lg:h-24 w-auto max-w-[220px] sm:max-w-[280px] md:max-w-[320px] object-contain group-hover:scale-[1.03] transition-transform duration-300 drop-shadow-sm"
+            alt="Curcuma Wellness - Pure Black Turmeric"
+            className="h-16 sm:h-20 md:h-22 lg:h-24 w-auto max-w-[220px] sm:max-w-[280px] md:max-w-[320px] object-contain group-hover:scale-[1.03] transition-transform duration-300 drop-shadow-sm rounded-full"
           />
         </a>
 

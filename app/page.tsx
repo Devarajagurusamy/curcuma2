@@ -57,7 +57,7 @@ export default function Home() {
         <FAQSection />
       </main>
 
-      {/* Malaysian Royal Gold Footer */}
+      {/* Curcuma Wellness Footer */}
       <Footer />
 
       {/* Express Order Popup Modal */}

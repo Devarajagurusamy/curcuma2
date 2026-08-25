@@ -7,17 +7,17 @@ const carouselSlides = [
   {
     id: 1,
     imageSrc: "/images/hero-banner.png",
-    altText: "Malaysian Royal Gold - Curcuma Caesia Roxb. The Only Original Black Turmeric Cultivator",
+    altText: "Curcuma Wellness - Premium Black Turmeric (Curcuma Caesia Roxb.)",
   },
   {
     id: 2,
     imageSrc: "/images/hero-banner.png",
-    altText: "100% Purest Curcuma Caesia - 100% Proudly Malaysia",
+    altText: "100% Pure Black Turmeric - Natural Botanical Wellness",
   },
   {
     id: 3,
     imageSrc: "/images/hero-banner.png",
-    altText: "The Journey of Well Being - Since 1930",
+    altText: "The Journey of Natural Vitality - Botanical Heritage",
   },
 ];
 

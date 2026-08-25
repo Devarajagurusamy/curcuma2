@@ -1,7 +1,17 @@
 "use client";
 
 import React from "react";
-import { Mail, MapPin, Phone, ShieldCheck, Heart } from "lucide-react";
+import { 
+  Mail, 
+  MapPin, 
+  Phone, 
+  ShieldCheck, 
+  Leaf, 
+  FlaskConical, 
+  Award, 
+  Sparkles, 
+  CheckCircle2 
+} from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function Footer() {
@@ -26,8 +36,8 @@ export default function Footer() {
             <a href="#" className="inline-block group mb-4">
               <img
                 src="/images/logo.png"
-                alt="Malaysian Royal Gold - Curcuma Caesia Roxb."
-                className="h-20 sm:h-22 md:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
+                alt="Curcuma Wellness - Pure Black Turmeric"
+                className="h-20 sm:h-22 md:h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md rounded-full"
               />
             </a>
             <p className="text-[#8ba294] text-xs leading-relaxed max-w-xs font-medium">
@@ -87,7 +97,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Customer Care */}
+          {/* Column 3: Customer Care & Policy */}
           <div className="lg:col-span-2 space-y-3">
             <h4 className="font-sans text-xs font-bold tracking-[0.14em] text-[#d9a74a] uppercase">
               {t.footer.colHelp}
@@ -130,10 +140,10 @@ export default function Footer() {
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-[#d9a74a] flex-shrink-0" />
                 <a 
-                  href="mailto:curcumacaesiaroxb@gmail.com" 
+                  href="mailto:support@curcumawellness.com" 
                   className="hover:text-[#d9a74a] transition-colors font-medium break-all"
                 >
-                  curcumacaesiaroxb@gmail.com
+                  support@curcumawellness.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -150,70 +160,66 @@ export default function Footer() {
 
         </div>
 
-        {/* Accreditation & Certification Badges Row */}
+        {/* Quality & Trust Badges Row (Generic Dummy Standards) */}
         <div className="py-8 border-b border-[#1b3d2b] flex flex-wrap items-center justify-center gap-6 sm:gap-10">
           
-          {/* Buatan Malaysia */}
-          <div className="flex items-center gap-2 text-white/90">
-            <div className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center p-1">
-              <svg viewBox="0 0 100 100" className="w-full h-full">
-                <circle cx="50" cy="50" r="45" fill="#002b7f" />
-                <path d="M50 20 L60 40 L82 40 L65 53 L71 75 L50 62 L29 75 L35 53 L18 40 L40 40 Z" fill="#fcd116" />
-                <path d="M15 70 Q50 90 85 70" stroke="#cc0000" strokeWidth="6" fill="none" />
-              </svg>
+          {/* 100% Botanical */}
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center p-1.5 text-[#d9a74a]">
+              <Leaf className="w-4 h-4 stroke-[2]" />
             </div>
             <div className="text-[10px] font-bold uppercase tracking-wider text-white">
-              BUATAN<br />MALAYSIA
+              100% BOTANICAL<br /><span className="text-[#8ba294] font-normal text-[9px]">Pure Herb Origin</span>
             </div>
           </div>
 
-          {/* myGAP */}
-          <div className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-full bg-white p-1 flex items-center justify-center shadow-sm">
-              <span className="text-[#15803d] font-extrabold text-[9px]">my<span className="text-[#b45309]">GAP</span></span>
+          {/* Lab Tested */}
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center p-1.5 text-[#d9a74a]">
+              <FlaskConical className="w-4 h-4 stroke-[2]" />
             </div>
             <div className="text-[10px] font-bold uppercase tracking-wider text-white">
-              myGAP<br /><span className="text-[#8ba294] font-normal text-[9px]">Certified Farm</span>
+              LAB TESTED<br /><span className="text-[#8ba294] font-normal text-[9px]">Safety Verified</span>
             </div>
           </div>
 
-          {/* GMP */}
-          <div className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-full bg-white/10 border border-[#b88c38] flex items-center justify-center p-1">
-              <span className="text-[#d9a74a] font-black text-[9px]">GMP</span>
+          {/* Quality Assured */}
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-full bg-white/10 border border-[#d9a74a]/40 flex items-center justify-center p-1.5 text-[#d9a74a]">
+              <Award className="w-4 h-4 stroke-[2]" />
             </div>
             <div className="text-[10px] font-bold uppercase tracking-wider text-white">
-              GMP<br /><span className="text-[#8ba294] font-normal text-[9px]">Certified Facility</span>
+              QUALITY ASSURED<br /><span className="text-[#8ba294] font-normal text-[9px]">Standard Controlled</span>
             </div>
           </div>
 
-          {/* HACCP */}
-          <div className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-full bg-white/10 border border-[#b88c38] flex items-center justify-center p-1">
-              <span className="text-[#d9a74a] font-black text-[8px]">HACCP</span>
+          {/* Clean Process */}
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center p-1.5 text-[#d9a74a]">
+              <Sparkles className="w-4 h-4 stroke-[2]" />
             </div>
             <div className="text-[10px] font-bold uppercase tracking-wider text-white">
-              HACCP<br /><span className="text-[#8ba294] font-normal text-[9px]">Food Safety Control</span>
+              CLEAN PROCESS<br /><span className="text-[#8ba294] font-normal text-[9px]">Hygienic Facility</span>
             </div>
           </div>
 
-          {/* FSMS ISO 22000 */}
-          <div className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-full bg-white/10 border border-[#16a34a] flex items-center justify-center p-1">
-              <span className="text-[#86efac] font-bold text-[8px]">FSMS</span>
+          {/* Safe Formula */}
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center p-1.5 text-[#d9a74a]">
+              <ShieldCheck className="w-4 h-4 stroke-[2]" />
             </div>
             <div className="text-[10px] font-bold uppercase tracking-wider text-white">
-              FSMS<br /><span className="text-[#8ba294] font-normal text-[9px]">ISO 22000 Standard</span>
+              SAFE FORMULA<br /><span className="text-[#8ba294] font-normal text-[9px]">Zero Fillers</span>
             </div>
           </div>
 
-          {/* Halal Malaysia */}
-          <div className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-full bg-white p-1 flex items-center justify-center shadow-sm">
-              <span className="text-[#0f172a] font-extrabold text-[8px]">HALAL</span>
+          {/* Tested Care */}
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center p-1.5 text-[#d9a74a]">
+              <CheckCircle2 className="w-4 h-4 stroke-[2]" />
             </div>
             <div className="text-[10px] font-bold uppercase tracking-wider text-white">
-              HALAL<br /><span className="text-[#8ba294] font-normal text-[9px]">JAKIM Malaysia</span>
+              TESTED CARE<br /><span className="text-[#8ba294] font-normal text-[9px]">Trusted Wellness</span>
             </div>
           </div>
 
