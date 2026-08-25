@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useRef } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import React from "react";
+import { Star } from "lucide-react";
 
 interface Testimonial {
   id: string;
@@ -63,21 +63,40 @@ const testimonials: Testimonial[] = [
   },
 ];
 
+function TestimonialCard({ item }: { item: Testimonial }) {
+  return (
+    <div className="flex-shrink-0 w-[290px] sm:w-[330px] md:w-[350px] rounded-2xl bg-[#FAF6EE] border border-[#ede1d3] p-5 sm:p-6 shadow-2xl flex flex-col justify-between text-[#142319] select-none hover:-translate-y-1 transition-all duration-300">
+      {/* Top Area: Avatar + Quote */}
+      <div className="flex items-start gap-4">
+        {/* User Avatar */}
+        <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-md flex-shrink-0 bg-gray-200">
+          <img
+            src={item.avatar}
+            alt={item.name}
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Review Quote */}
+        <p className="text-xs sm:text-[13px] text-[#142319] font-medium leading-relaxed italic">
+          {item.quote}
+        </p>
+      </div>
+
+      {/* Bottom Area: Name & City */}
+      <div className="mt-5 pt-3 border-t border-[#e8ded0] flex flex-col">
+        <span className="text-xs text-[#525e56] font-bold">
+          – {item.name}, {item.age}
+        </span>
+        <span className="text-xs font-extrabold text-[#142319] tracking-tight mt-0.5">
+          {item.location}
+        </span>
+      </div>
+    </div>
+  );
+}
+
 export default function Testimonials() {
-  const sliderRef = useRef<HTMLDivElement>(null);
-
-  const scrollLeft = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: -360, behavior: "smooth" });
-    }
-  };
-
-  const scrollRight = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: 360, behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="reviews" className="w-full bg-[#0d2218] py-14 sm:py-20 text-white relative overflow-hidden border-t border-[#183929] scroll-mt-20">
       
@@ -126,79 +145,25 @@ export default function Testimonials() {
               </div>
             </div>
 
-            {/* Elegant Navigation Buttons on Desktop / Tablet */}
-            <div className="hidden sm:flex items-center gap-3 pt-3">
-              <button
-                onClick={scrollLeft}
-                aria-label="Previous Reviews"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#c58b28] text-white border border-white/20 hover:border-[#c58b28] flex items-center justify-center transition-all cursor-pointer group shadow-md"
-              >
-                <ChevronLeft className="w-5 h-5 stroke-[2.2] group-hover:-translate-x-0.5 transition-transform" />
-              </button>
-              <button
-                onClick={scrollRight}
-                aria-label="Next Reviews"
-                className="w-10 h-10 rounded-full bg-[#c58b28] hover:bg-[#b0781e] text-white shadow-[0_2px_12px_rgba(197,139,40,0.4)] flex items-center justify-center transition-all cursor-pointer group hover:scale-105"
-              >
-                <ChevronRight className="w-5 h-5 stroke-[2.2] group-hover:translate-x-0.5 transition-transform" />
-              </button>
-            </div>
-
           </div>
 
           {/* Right Column: Endless Loop Testimonial Slider */}
-          <div className="lg:col-span-8 relative">
-            
-            {/* Testimonials Horizontal Carousel */}
-            <div
-              ref={sliderRef}
-              className="flex items-stretch gap-5 overflow-x-auto scrollbar-none scroll-smooth pb-3 pt-1 px-1 snap-x select-none"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-            >
-              {testimonials.concat(testimonials).map((item, index) => (
-                <div
-                  key={`${item.id}-${index}`}
-                  className="flex-shrink-0 w-[290px] sm:w-[330px] md:w-[350px] rounded-2xl bg-[#FAF6EE] border border-[#ede1d3] p-5 sm:p-6 shadow-2xl flex flex-col justify-between text-[#142319] snap-start hover:-translate-y-1 transition-all duration-300"
-                >
-                  {/* Top Area: Avatar + Quote */}
-                  <div className="flex items-start gap-4">
-                    {/* User Avatar */}
-                    <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-md flex-shrink-0 bg-gray-200">
-                      <img
-                        src={item.avatar}
-                        alt={item.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-
-                    {/* Review Quote */}
-                    <p className="text-xs sm:text-[13px] text-[#142319] font-medium leading-relaxed italic">
-                      {item.quote}
-                    </p>
-                  </div>
-
-                  {/* Bottom Area: Name & City */}
-                  <div className="mt-5 pt-3 border-t border-[#e8ded0] flex flex-col">
-                    <span className="text-xs text-[#525e56] font-bold">
-                      – {item.name}, {item.age}
-                    </span>
-                    <span className="text-xs font-extrabold text-[#142319] tracking-tight mt-0.5">
-                      {item.location}
-                    </span>
-                  </div>
-                </div>
-              ))}
+          <div className="lg:col-span-8 overflow-hidden relative py-2 [mask-image:linear-gradient(to_right,transparent_0%,black_4%,black_96%,transparent_100%)]">
+            <div className="flex w-max animate-marquee hover:[animation-play-state:paused] cursor-grab active:cursor-grabbing">
+              {/* First Set of Cards */}
+              <div className="flex items-stretch gap-5 pr-5">
+                {testimonials.map((item, index) => (
+                  <TestimonialCard key={`track1-${item.id}-${index}`} item={item} />
+                ))}
+              </div>
+              
+              {/* Duplicate Set for Seamless Infinite Loop */}
+              <div className="flex items-stretch gap-5 pr-5" aria-hidden="true">
+                {testimonials.map((item, index) => (
+                  <TestimonialCard key={`track2-${item.id}-${index}`} item={item} />
+                ))}
+              </div>
             </div>
-
-            {/* Floating Next Button on right edge */}
-            <button
-              onClick={scrollRight}
-              aria-label="Next Reviews"
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-11 h-11 rounded-full bg-[#c58b28] hover:bg-[#b0781e] text-white shadow-2xl flex items-center justify-center transition-all cursor-pointer hover:scale-110 active:scale-95 z-20"
-            >
-              <ChevronRight className="w-5 h-5 stroke-[2.5]" />
-            </button>
-
           </div>
 
         </div>

@@ -1,13 +1,10 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { 
-  ChevronLeft, 
-  ChevronRight, 
   ArrowRight, 
   X, 
   ExternalLink, 
-  FileText, 
   CheckCircle2,
   ZoomIn
 } from "lucide-react";
@@ -357,20 +354,36 @@ const studyDocuments: StudyDoc[] = [
 
 export default function ScienceEvidence() {
   const [selectedDoc, setSelectedDoc] = useState<StudyDoc | null>(null);
-  const sliderRef = useRef<HTMLDivElement>(null);
 
-  // Smooth endless loop scrolling
-  const scrollLeft = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: -320, behavior: "smooth" });
-    }
-  };
+  const renderDocCard = (doc: StudyDoc, keyPrefix: string, idx: number) => (
+    <div
+      key={`${keyPrefix}-${doc.id}-${idx}`}
+      onClick={() => setSelectedDoc(doc)}
+      className="flex-shrink-0 w-[190px] sm:w-[210px] md:w-[230px] flex flex-col items-center cursor-pointer group select-none"
+    >
+      {/* Document Sheet Card */}
+      <div className="relative w-full aspect-[1/1.38] rounded-xl bg-white border border-[#e4d7c6] shadow-[0_6px_22px_rgba(0,0,0,0.06)] group-hover:shadow-[0_14px_34px_rgba(0,0,0,0.12)] group-hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between">
+        
+        {/* Rendered Realistic Paper Content */}
+        <div className="w-full h-full">
+          {doc.docContent}
+        </div>
 
-  const scrollRight = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: 320, behavior: "smooth" });
-    }
-  };
+        {/* Hover Zoom Overlay */}
+        <div className="absolute inset-0 bg-[#0d271c]/30 opacity-0 group-hover:opacity-100 backdrop-blur-[1px] transition-opacity flex items-center justify-center">
+          <div className="w-10 h-10 rounded-full bg-white/90 text-[#142319] flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
+            <ZoomIn className="w-5 h-5 stroke-[2]" />
+          </div>
+        </div>
+
+      </div>
+
+      {/* Document Title Underneath */}
+      <span className="text-xs sm:text-[13px] font-bold text-[#142319] text-center leading-snug mt-3 group-hover:text-[#c58b28] transition-colors max-w-[200px]">
+        {doc.title}
+      </span>
+    </div>
+  );
 
   return (
     <section id="science" className="relative w-full py-16 sm:py-20 bg-[#F7F2EC] overflow-hidden border-y border-[#eadecf]/70 scroll-mt-20">
@@ -398,7 +411,7 @@ export default function ScienceEvidence() {
               Backed by university research and laboratory verification.
             </p>
 
-            {/* CTA Button & Slider Controls */}
+            {/* CTA Button */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <a
                 href="#studies"
@@ -407,68 +420,23 @@ export default function ScienceEvidence() {
                 <span>VIEW ALL STUDIES</span>
                 <ArrowRight className="w-4 h-4 stroke-[2.5]" />
               </a>
-
-              {/* Elegant Navigation Arrows */}
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={scrollLeft}
-                  aria-label="Previous Studies"
-                  className="w-10 h-10 rounded-full bg-white border border-[#ded3c2] text-[#142319] hover:bg-[#c58b28] hover:text-white hover:border-[#c58b28] shadow-sm flex items-center justify-center transition-all cursor-pointer group"
-                >
-                  <ChevronLeft className="w-5 h-5 stroke-[2.2] group-hover:-translate-x-0.5 transition-transform" />
-                </button>
-                <button
-                  onClick={scrollRight}
-                  aria-label="Next Studies"
-                  className="w-10 h-10 rounded-full bg-white border border-[#ded3c2] text-[#142319] hover:bg-[#c58b28] hover:text-white hover:border-[#c58b28] shadow-sm flex items-center justify-center transition-all cursor-pointer group"
-                >
-                  <ChevronRight className="w-5 h-5 stroke-[2.2] group-hover:translate-x-0.5 transition-transform" />
-                </button>
-              </div>
             </div>
 
           </div>
 
           {/* Right Column: Endless Loop Document Slider */}
-          <div className="lg:col-span-8 relative">
-            
-            {/* Horizontal Scroll Container */}
-            <div
-              ref={sliderRef}
-              className="flex items-stretch gap-5 overflow-x-auto scrollbar-none scroll-smooth pb-4 pt-2 px-1 snap-x select-none"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-            >
-              {studyDocuments.concat(studyDocuments).map((doc, idx) => (
-                <div
-                  key={`${doc.id}-${idx}`}
-                  onClick={() => setSelectedDoc(doc)}
-                  className="flex-shrink-0 w-[190px] sm:w-[210px] md:w-[230px] flex flex-col items-center cursor-pointer group snap-start"
-                >
-                  {/* Document Sheet Card */}
-                  <div className="relative w-full aspect-[1/1.38] rounded-xl bg-white border border-[#e4d7c6] shadow-[0_6px_22px_rgba(0,0,0,0.06)] group-hover:shadow-[0_14px_34px_rgba(0,0,0,0.12)] group-hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between">
-                    
-                    {/* Rendered Realistic Paper Content */}
-                    <div className="w-full h-full">
-                      {doc.docContent}
-                    </div>
+          <div className="lg:col-span-8 overflow-hidden relative py-2 [mask-image:linear-gradient(to_right,transparent_0%,black_4%,black_96%,transparent_100%)]">
+            <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+              {/* First Track */}
+              <div className="flex items-start gap-5 pr-5">
+                {studyDocuments.map((doc, idx) => renderDocCard(doc, "track1", idx))}
+              </div>
 
-                    {/* Hover Zoom Overlay */}
-                    <div className="absolute inset-0 bg-[#0d271c]/30 opacity-0 group-hover:opacity-100 backdrop-blur-[1px] transition-opacity flex items-center justify-center">
-                      <div className="w-10 h-10 rounded-full bg-white/90 text-[#142319] flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
-                        <ZoomIn className="w-5 h-5 stroke-[2]" />
-                      </div>
-                    </div>
-
-                  </div>
-
-                  {/* Document Title Underneath */}
-                  <span className="text-xs sm:text-[13px] font-bold text-[#142319] text-center leading-snug mt-3 group-hover:text-[#c58b28] transition-colors max-w-[200px]">
-                    {doc.title}
-                  </span>
-                </div>
-              ))}
+              {/* Duplicate Track for Seamless Infinite Loop */}
+              <div className="flex items-start gap-5 pr-5" aria-hidden="true">
+                {studyDocuments.map((doc, idx) => renderDocCard(doc, "track2", idx))}
+              </div>
             </div>
-
           </div>
 
         </div>
