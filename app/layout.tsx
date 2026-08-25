@@ -26,6 +26,8 @@ export const metadata: Metadata = {
     "Pure, natural Malaysian black turmeric to soothe joint pain, calm your digestion, and help you wake up feeling energetic and refreshed every day.",
 };
 
+import { LanguageProvider } from "./context/LanguageContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -37,7 +39,9 @@ export default function RootLayout({
       className={`${playfair.variable} ${cinzel.variable} ${plusJakarta.variable} h-full antialiased`}
     >
       <body className="min-h-full font-sans bg-white text-[#1a261f]">
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

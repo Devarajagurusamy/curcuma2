@@ -2,8 +2,11 @@
 
 import React from "react";
 import { Leaf, FlaskConical, ShieldCheck, Award } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function TrustBadges() {
+  const { t } = useLanguage();
+
   return (
     <section className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 xl:px-12 py-3">
       {/* Trust & Quality Pillars Bar */}
@@ -17,10 +20,10 @@ export default function TrustBadges() {
             </div>
             <div>
               <div className="text-xs font-bold text-[#142319] leading-tight">
-                Backed by Science
+                {t.trustBadges.badge1Title}
               </div>
               <div className="text-[10px] text-[#616e66] leading-tight mt-0.5">
-                Tested by top universities
+                {t.trustBadges.badge1Sub}
               </div>
             </div>
           </div>
@@ -32,10 +35,10 @@ export default function TrustBadges() {
             </div>
             <div>
               <div className="text-xs font-bold text-[#142319] leading-tight">
-                Fast Natural Relief
+                {t.trustBadges.badge2Title}
               </div>
               <div className="text-[10px] text-[#616e66] leading-tight mt-0.5">
-                Absorbs quickly for daily energy
+                {t.trustBadges.badge2Sub}
               </div>
             </div>
           </div>
@@ -47,10 +50,10 @@ export default function TrustBadges() {
             </div>
             <div>
               <div className="text-xs font-bold text-[#142319] leading-tight">
-                100% Pure &amp; Clean
+                {t.trustBadges.badge3Title}
               </div>
               <div className="text-[10px] text-[#616e66] leading-tight mt-0.5">
-                Zero harmful chemicals or fillers
+                {t.trustBadges.badge3Sub}
               </div>
             </div>
           </div>
@@ -62,10 +65,10 @@ export default function TrustBadges() {
             </div>
             <div>
               <div className="text-xs font-bold text-[#142319] leading-tight">
-                Gentle on Stomach
+                {t.trustBadges.badge4Title}
               </div>
               <div className="text-[10px] text-[#616e66] leading-tight mt-0.5">
-                Certified safe &amp; Halal verified
+                {t.trustBadges.badge4Sub}
               </div>
             </div>
           </div>
@@ -77,10 +80,10 @@ export default function TrustBadges() {
             </div>
             <div>
               <div className="text-xs font-bold text-[#142319] leading-tight">
-                Made with Care
+                {t.trustBadges.badge5Title}
               </div>
               <div className="text-[10px] text-[#616e66] leading-tight mt-0.5">
-                Pure Malaysian harvest you can trust
+                {t.trustBadges.badge5Sub}
               </div>
             </div>
           </div>

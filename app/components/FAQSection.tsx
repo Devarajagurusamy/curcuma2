@@ -8,67 +8,10 @@ import {
   Sparkles,
   ShieldCheck
 } from "lucide-react";
-
-interface FAQItem {
-  id: number;
-  category: "all" | "science" | "usage" | "safety" | "shipping";
-  question: string;
-  answer: string;
-}
-
-const faqList: FAQItem[] = [
-  {
-    id: 1,
-    category: "science",
-    question: "Why is Black Turmeric so much better than normal yellow turmeric?",
-    answer:
-      "Black turmeric is a rare, powerful healing herb. Unlike ordinary cooking turmeric, authentic black turmeric contains twice the active healing strength (ar-Curcumene) and deep purple natural antioxidants. Your body absorbs it much faster and easier, so you feel soothing relief in your knees, digestion, and daily energy without having to take black pepper or chemical boosters.",
-  },
-  {
-    id: 2,
-    category: "usage",
-    question: "How and when should I take my daily capsules?",
-    answer:
-      "Simply take 2 capsules once every day with a warm glass of water, ideally in the morning after your breakfast. Drinking plenty of water throughout the day helps your body gently absorb all the natural nutrients. Taking it every day for 3 to 4 weeks gives your body the deep, lasting relief it needs.",
-  },
-  {
-    id: 3,
-    category: "safety",
-    question: "Is this product Halal, certified safe, and clean?",
-    answer:
-      "Yes, 100%. Our black turmeric is grown cleanly in Malaysia and prepared in certified facilities approved by the Ministry of Health (MeSTI) and certified Halal by JAKIM. The capsules are 100% vegetarian plant capsules with zero chemicals, zero heavy metals, and zero artificial fillers.",
-  },
-  {
-    id: 4,
-    category: "safety",
-    question: "Can I take this if I have high blood pressure, diabetes, or take daily medication?",
-    answer:
-      "Yes! University studies show black turmeric is gentle on the body and helps support healthy blood sugar balance and smooth blood flow. If you are taking prescription medicine, we simply recommend leaving 1 to 2 hours between your regular medicine and your black turmeric, or checking with your family doctor.",
-  },
-  {
-    id: 5,
-    category: "usage",
-    question: "How fast will I start feeling better?",
-    answer:
-      "Many customers tell us their stomach bloating, trapped gas, and tiredness begin feeling better within the first 3 to 7 days. For deeper comfort—like easier knee bending, lighter morning joints, and restful sleep—you will notice a wonderful difference after 2 to 3 weeks of daily routine.",
-  },
-  {
-    id: 6,
-    category: "shipping",
-    question: "What is your 30-Day Money Back Guarantee?",
-    answer:
-      "We want you to feel completely comfortable and cared for. If you try our black turmeric and do not feel a positive difference in your daily wellness within 30 days, just reach out to our friendly support team on WhatsApp for a hassle-free exchange or full refund.",
-  },
-  {
-    id: 7,
-    category: "shipping",
-    question: "How long does delivery take, and can I pay upon delivery (COD)?",
-    answer:
-      "We pack your order with care and ship within 24 hours. West Malaysia orders arrive at your doorstep in 1 to 3 working days with Free Shipping. Sabah & Sarawak orders arrive in 3 to 5 days. You can easily choose Cash on Delivery (COD) to pay the courier directly when your parcel arrives safely.",
-  },
-];
+import { useLanguage } from "../context/LanguageContext";
 
 export default function FAQSection() {
+  const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [openIds, setOpenIds] = useState<number[]>([1, 2]);
 
@@ -80,8 +23,8 @@ export default function FAQSection() {
 
   const filteredFaqs =
     activeCategory === "all"
-      ? faqList
-      : faqList.filter((faq) => faq.category === activeCategory);
+      ? t.faq.items
+      : t.faq.items.filter((faq) => faq.category === activeCategory);
 
   return (
     <section id="faq" className="w-full py-16 sm:py-24 bg-[#FAF7F2] border-t border-[#ede3d5] relative overflow-hidden">
@@ -101,29 +44,29 @@ export default function FAQSection() {
           <div className="inline-flex items-center gap-2 text-[#c59b3f] font-serif text-[11px] sm:text-xs font-bold tracking-[0.24em] uppercase">
             <span>—</span>
             <span className="text-[10px]">❖</span>
-            <span>CLEAR, HONEST ANSWERS</span>
+            <span>{t.faq.tag}</span>
             <span className="text-[10px]">❖</span>
             <span>—</span>
           </div>
 
           {/* Main Headline */}
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#142319] leading-tight tracking-tight">
-            Frequently Asked Questions
+            {t.faq.mainTitle}
           </h2>
 
           {/* Subtitle */}
           <p className="text-[#59665f] text-xs sm:text-sm font-medium leading-relaxed max-w-xl mx-auto pt-1">
-            Simple, honest answers to help you and your family make the best choice for your daily health.
+            {t.faq.subtitle}
           </p>
 
           {/* Category Filter Tabs */}
           <div className="flex items-center sm:justify-center gap-2 pt-5 overflow-x-auto scrollbar-none pb-2 sm:pb-0 px-2">
             {[
-              { id: "all", label: "All Questions" },
-              { id: "science", label: "Why Black Turmeric" },
-              { id: "usage", label: "How to Take" },
-              { id: "safety", label: "Safety & Halal" },
-              { id: "shipping", label: "Delivery & Guarantee" },
+              { id: "all", label: t.faq.tabs.all },
+              { id: "science", label: t.faq.tabs.science },
+              { id: "usage", label: t.faq.tabs.usage },
+              { id: "safety", label: t.faq.tabs.safety },
+              { id: "shipping", label: t.faq.tabs.shipping },
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -210,10 +153,10 @@ export default function FAQSection() {
             </div>
             <div>
               <h4 className="font-serif text-base font-bold text-[#142319]">
-                Need a friendly word or have questions?
+                {t.faq.helpBoxTitle}
               </h4>
               <p className="text-xs text-[#637067] mt-0.5">
-                Our caring team is here to listen and help you on WhatsApp anytime.
+                {t.faq.helpBoxDesc}
               </p>
             </div>
           </div>
@@ -224,7 +167,7 @@ export default function FAQSection() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#15803d] hover:bg-[#166534] text-white text-xs font-bold tracking-wider uppercase shadow-md hover:shadow-lg transition-all flex-shrink-0 cursor-pointer"
           >
-            <span>CHAT WITH US ON WHATSAPP</span>
+            <span>{t.faq.helpBoxCta}</span>
           </a>
         </div>
 

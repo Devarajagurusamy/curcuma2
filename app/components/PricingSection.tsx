@@ -10,12 +10,14 @@ import {
   Sparkles,
   ArrowRight
 } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 interface PricingSectionProps {
   onSelectPackage?: (packageId: string) => void;
 }
 
 export default function PricingSection({ onSelectPackage }: PricingSectionProps) {
+  const { t } = useLanguage();
   const [activeCard, setActiveCard] = useState<string>("3-bottles");
 
   const handleOrder = (id: string) => {
@@ -37,35 +39,34 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
             
             <div>
               {/* Main Headline */}
-              <h2 className="font-serif text-2xl sm:text-3xl lg:text-[32px] font-extrabold text-[#142319] leading-tight tracking-tight uppercase">
-                CHOOSE YOUR<br />
-                HEALING ROUTINE
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-[32px] font-extrabold text-[#142319] leading-tight tracking-tight uppercase whitespace-pre-line">
+                {t.pricing.headline}
               </h2>
 
               <p className="text-xs text-[#525f57] mt-2 leading-relaxed">
-                Take the first step toward pain-free mornings and vibrant daily energy.
+                {t.pricing.subheadline}
               </p>
 
               {/* Guarantees List */}
               <div className="space-y-3 mt-4 sm:mt-6">
                 <div className="flex items-center gap-2.5 text-xs sm:text-[13px] font-bold text-[#233329]">
                   <Check className="w-4 h-4 text-emerald-700 stroke-[2.5] flex-shrink-0" />
-                  <span>30-Day Money Back Guarantee</span>
+                  <span>{t.pricing.guarantee1}</span>
                 </div>
 
                 <div className="flex items-center gap-2.5 text-xs sm:text-[13px] font-bold text-[#233329]">
                   <Check className="w-4 h-4 text-emerald-700 stroke-[2.5] flex-shrink-0" />
-                  <span>Free Home Delivery (West Malaysia)</span>
+                  <span>{t.pricing.guarantee2}</span>
                 </div>
 
                 <div className="flex items-center gap-2.5 text-xs sm:text-[13px] font-bold text-[#233329]">
                   <Check className="w-4 h-4 text-emerald-700 stroke-[2.5] flex-shrink-0" />
-                  <span>Pay at Doorstep (COD Available)</span>
+                  <span>{t.pricing.guarantee3}</span>
                 </div>
 
                 <div className="flex items-center gap-2.5 text-xs sm:text-[13px] font-bold text-[#233329]">
                   <Check className="w-4 h-4 text-emerald-700 stroke-[2.5] flex-shrink-0" />
-                  <span>100% Safe &amp; Secure Checkout</span>
+                  <span>{t.pricing.guarantee4}</span>
                 </div>
               </div>
             </div>
@@ -78,8 +79,8 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                 <div className="w-9 h-9 rounded-full bg-[#f4ece1] border border-[#e2d5c2] flex items-center justify-center text-[#c58b28] mb-1.5 shadow-sm">
                   <ShieldCheck className="w-4 h-4 stroke-[1.8]" />
                 </div>
-                <span className="text-[10px] sm:text-[11px] font-bold text-[#142319] leading-tight">
-                  100% Pure<br />&amp; Clean
+                <span className="text-[10px] sm:text-[11px] font-bold text-[#142319] leading-tight whitespace-pre-line">
+                  {t.pricing.trust1}
                 </span>
               </div>
 
@@ -88,8 +89,8 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                 <div className="w-9 h-9 rounded-full bg-[#f4ece1] border border-[#e2d5c2] flex items-center justify-center text-[#c58b28] mb-1.5 shadow-sm">
                   <Truck className="w-4 h-4 stroke-[1.8]" />
                 </div>
-                <span className="text-[10px] sm:text-[11px] font-bold text-[#142319] leading-tight">
-                  Fast, Gentle<br />Delivery
+                <span className="text-[10px] sm:text-[11px] font-bold text-[#142319] leading-tight whitespace-pre-line">
+                  {t.pricing.trust2}
                 </span>
               </div>
 
@@ -98,8 +99,8 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                 <div className="w-9 h-9 rounded-full bg-[#f4ece1] border border-[#e2d5c2] flex items-center justify-center text-[#c58b28] mb-1.5 shadow-sm">
                   <UserCheck className="w-4 h-4 stroke-[1.8]" />
                 </div>
-                <span className="text-[10px] sm:text-[11px] font-bold text-[#142319] leading-tight">
-                  Loved &amp;<br />Trusted
+                <span className="text-[10px] sm:text-[11px] font-bold text-[#142319] leading-tight whitespace-pre-line">
+                  {t.pricing.trust3}
                 </span>
               </div>
 
@@ -116,7 +117,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                 1 BOTTLE
               </h3>
               <p className="text-xs text-[#637067] font-medium mt-0.5">
-                60 Capsules • 1-Month Trial
+                {t.pricing.capsules1}
               </p>
             </div>
 
@@ -139,7 +140,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                 <span className="text-xs text-gray-400 line-through">RM179.90</span>
               </div>
               <div className="text-[11px] font-extrabold text-emerald-800 uppercase tracking-wider">
-                SAVE RM20
+                {t.pricing.save} RM20
               </div>
 
               {/* Solid Gold ORDER NOW Button */}
@@ -150,7 +151,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                 <span className="w-3.5 h-3.5 rounded-full bg-white/20 flex items-center justify-center text-[9px] font-black text-white">
                   ★
                 </span>
-                <span>ORDER NOW</span>
+                <span>{t.pricing.orderNow}</span>
               </button>
             </div>
 
@@ -161,7 +162,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
             
             {/* Top Ribbon */}
             <div className="w-full bg-[#c58b28] text-white text-[11px] font-bold tracking-[0.18em] uppercase py-2 text-center rounded-t-[14px]">
-              MOST POPULAR • FULL RECOVERY
+              {t.pricing.mostPopularRibbon}
             </div>
 
             <div className="p-5 sm:p-6 flex flex-col justify-between flex-1">
@@ -171,7 +172,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                   3 BOTTLES
                 </h3>
                 <p className="text-xs text-[#637067] font-medium mt-0.5">
-                  180 Capsules • 3-Month Deep Care
+                  {t.pricing.capsules3}
                 </p>
               </div>
 
@@ -194,7 +195,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                   <span className="text-xs text-gray-400 line-through">RM539.70</span>
                 </div>
                 <div className="text-[11px] font-extrabold text-emerald-800 uppercase tracking-wider">
-                  SAVE RM139.80 (BEST VALUE)
+                  {t.pricing.save} RM139.80 ({t.pricing.bestValue})
                 </div>
 
                 {/* Solid Gold ORDER NOW Button */}
@@ -205,7 +206,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                   <span className="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center text-[10px] font-black text-white">
                     ★
                   </span>
-                  <span>ORDER NOW</span>
+                  <span>{t.pricing.orderNow}</span>
                 </button>
               </div>
             </div>
@@ -221,7 +222,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                 2 BOTTLES
               </h3>
               <p className="text-xs text-[#637067] font-medium mt-0.5">
-                120 Capsules • 2-Month Routine
+                {t.pricing.capsules2}
               </p>
             </div>
 
@@ -244,7 +245,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                 <span className="text-xs text-gray-400 line-through">RM359.80</span>
               </div>
               <div className="text-[11px] font-extrabold text-emerald-800 uppercase tracking-wider">
-                SAVE RM59.90
+                {t.pricing.save} RM59.90
               </div>
 
               {/* Solid Gold ORDER NOW Button */}
@@ -255,7 +256,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                 <span className="w-3.5 h-3.5 rounded-full bg-white/20 flex items-center justify-center text-[9px] font-black text-white">
                   ★
                 </span>
-                <span>ORDER NOW</span>
+                <span>{t.pricing.orderNow}</span>
               </button>
             </div>
 
@@ -266,8 +267,8 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
             
             {/* Recommended Dosage */}
             <div>
-              <h4 className="text-[12px] sm:text-[13px] font-bold text-[#c58b28] tracking-wider uppercase font-sans">
-                HOW TO TAKE FOR<br />BEST RESULTS
+              <h4 className="text-[12px] sm:text-[13px] font-bold text-[#c58b28] tracking-wider uppercase font-sans whitespace-pre-line">
+                {t.pricing.dosageTitle}
               </h4>
               
               <div className="flex items-start gap-3 mt-3 sm:mt-4">
@@ -275,8 +276,8 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                   <Pill className="w-4 h-4 text-[#c58b28]" />
                 </div>
                 <div className="text-xs text-[#28382e] font-semibold leading-snug">
-                  2 capsules daily<br />
-                  <span className="font-normal text-[#5c6861]">Take after breakfast with a warm glass of water.</span>
+                  {t.pricing.dosageDaily}<br />
+                  <span className="font-normal text-[#5c6861]">{t.pricing.dosageNote}</span>
                 </div>
               </div>
             </div>
@@ -284,10 +285,10 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
             {/* Precaution */}
             <div className="pt-3 sm:pt-4 border-t border-[#e8ded0]">
               <h4 className="text-[12px] sm:text-[13px] font-bold text-[#c58b28] tracking-wider uppercase font-sans">
-                GENTLE CARE NOTE
+                {t.pricing.careTitle}
               </h4>
               <p className="text-[11px] sm:text-xs text-[#5c6861] leading-relaxed mt-1.5 sm:mt-2 font-normal">
-                If you are pregnant, nursing, or taking prescription medicine, we always recommend consulting your doctor first.
+                {t.pricing.careDesc}
               </p>
             </div>
 

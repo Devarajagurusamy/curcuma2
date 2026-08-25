@@ -2,8 +2,11 @@
 
 import React from "react";
 import { Mail, MapPin, Phone, ShieldCheck, Heart } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="w-full bg-[#081b12] text-white pt-16 pb-12 border-t border-[#183928] relative overflow-hidden">
       
@@ -28,23 +31,23 @@ export default function Footer() {
               />
             </a>
             <p className="text-[#8ba294] text-xs leading-relaxed max-w-xs font-medium">
-              Dedicated to bringing natural comfort, pain-free mobility, and peace of mind to Malaysian families through pure, authentic black turmeric.
+              {t.footer.desc}
             </p>
           </div>
 
           {/* Column 1: Company Profile & Address */}
           <div className="lg:col-span-3 space-y-3">
             <h4 className="font-serif text-sm font-bold tracking-wider text-white uppercase">
-              MALAYSIAN ROYAL GOLD
+              {t.footer.companyTitle}
             </h4>
             <div className="space-y-2 text-xs text-[#8ba294] leading-relaxed">
               <p className="font-semibold text-white/90">
-                By Berkat Curcuma Caesia Sdn Bhd
+                {t.footer.companySub}
               </p>
               <div className="flex items-start gap-2 pt-1">
                 <MapPin className="w-4 h-4 text-[#d9a74a] flex-shrink-0 mt-0.5" />
                 <p>
-                  Plot 1, Kampung Seri Aman, Jalan Kulai Kota Tinggi, 81900 Kota Tinggi, Johor, Malaysia.
+                  {t.footer.companyAddress}
                 </p>
               </div>
             </div>
@@ -53,32 +56,32 @@ export default function Footer() {
           {/* Column 2: Quick Links */}
           <div className="lg:col-span-2 space-y-3">
             <h4 className="font-sans text-xs font-bold tracking-[0.14em] text-[#d9a74a] uppercase">
-              EXPLORE
+              {t.footer.colExplore}
             </h4>
             <ul className="space-y-2 text-xs text-[#8ba294]">
               <li>
                 <a href="#story" className="hover:text-[#d9a74a] transition-colors">
-                  Our Healing Story
+                  {t.footer.links.story}
                 </a>
               </li>
               <li>
                 <a href="#benefits" className="hover:text-[#d9a74a] transition-colors">
-                  Health Benefits
+                  {t.footer.links.benefits}
                 </a>
               </li>
               <li>
                 <a href="#science" className="hover:text-[#d9a74a] transition-colors">
-                  University Research
+                  {t.footer.links.science}
                 </a>
               </li>
               <li>
                 <a href="#reviews" className="hover:text-[#d9a74a] transition-colors">
-                  Customer Stories
+                  {t.footer.links.reviews}
                 </a>
               </li>
               <li>
                 <a href="#order" className="hover:text-[#d9a74a] transition-colors">
-                  Order Your Bottle
+                  {t.footer.links.order}
                 </a>
               </li>
             </ul>
@@ -87,32 +90,32 @@ export default function Footer() {
           {/* Column 3: Customer Care */}
           <div className="lg:col-span-2 space-y-3">
             <h4 className="font-sans text-xs font-bold tracking-[0.14em] text-[#d9a74a] uppercase">
-              HELP &amp; CARE
+              {t.footer.colHelp}
             </h4>
             <ul className="space-y-2 text-xs text-[#8ba294]">
               <li>
                 <a href="#faq" className="hover:text-[#d9a74a] transition-colors">
-                  Common Questions
+                  {t.footer.links.faq}
                 </a>
               </li>
               <li>
                 <a href="#order" className="hover:text-[#d9a74a] transition-colors">
-                  30-Day Guarantee
+                  {t.footer.links.guarantee}
                 </a>
               </li>
               <li>
                 <a href="#order" className="hover:text-[#d9a74a] transition-colors">
-                  Shipping &amp; Delivery
+                  {t.footer.links.shipping}
                 </a>
               </li>
               <li>
-                <a href="#privacy" className="hover:text-[#d9a74a] transition-colors">
-                  Privacy Policy
+                <a href="#faq" className="hover:text-[#d9a74a] transition-colors">
+                  {t.footer.links.privacy}
                 </a>
               </li>
               <li>
-                <a href="#terms" className="hover:text-[#d9a74a] transition-colors">
-                  Terms &amp; Conditions
+                <a href="#faq" className="hover:text-[#d9a74a] transition-colors">
+                  {t.footer.links.terms}
                 </a>
               </li>
             </ul>
@@ -121,7 +124,7 @@ export default function Footer() {
           {/* Column 4: Contact */}
           <div className="lg:col-span-2 space-y-3">
             <h4 className="font-sans text-xs font-bold tracking-[0.14em] text-[#d9a74a] uppercase">
-              WE ARE HERE FOR YOU
+              {t.footer.colContact}
             </h4>
             <div className="space-y-2.5 text-xs text-[#8ba294]">
               <div className="flex items-center gap-2">
@@ -140,7 +143,7 @@ export default function Footer() {
                 </span>
               </div>
               <div className="text-[11px] text-[#6e8577] pt-1">
-                Mon – Fri: 9:00 AM – 6:00 PM (MYT)
+                {t.footer.workHours}
               </div>
             </div>
           </div>
@@ -219,10 +222,10 @@ export default function Footer() {
         {/* Copyright & Health Disclaimer */}
         <div className="pt-8 text-center space-y-3">
           <p className="text-xs text-white/90 font-medium tracking-wide">
-            © 2026 Berkat Curcuma Caesia Sdn Bhd. All rights reserved.
+            {t.footer.rights}
           </p>
           <p className="text-[10.5px] text-[#71887b] max-w-2xl mx-auto leading-relaxed">
-            * These statements have not been evaluated by health authorities. This product is not intended to diagnose, treat, cure, or prevent any disease.
+            {t.footer.disclaimer}
           </p>
         </div>
 

@@ -1,180 +1,107 @@
 "use client";
 
 import React from "react";
-import { 
-  FlaskConical, 
-  Leaf, 
-  ShieldCheck, 
-  Award, 
-  CheckCircle2,
-  Sparkles
-} from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
-interface BenefitCard {
-  number: string;
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-}
-
-const scientificBenefits: BenefitCard[] = [
-  {
-    number: "01",
-    title: "Twice as Powerful as Regular Turmeric",
-    description:
-      "Absorbs faster and goes deeper to soothe your body and restore vitality where you need it most.",
-    icon: (
-      <svg className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
-        <circle cx="16" cy="16" r="4.5" strokeDasharray="1 1" />
-        <circle cx="9" cy="9" r="2.5" />
-        <circle cx="23" cy="9" r="2.5" />
-        <circle cx="25" cy="22" r="3" fill="#e58e1b" stroke="#e58e1b" />
-        <circle cx="7" cy="22" r="2.5" />
-        <circle cx="16" cy="27" r="2" />
-        <line x1="11" y1="10.5" x2="14" y2="13.5" />
-        <line x1="21" y1="10.5" x2="18" y2="13.5" />
-        <line x1="18.5" y1="18.5" x2="22.5" y2="21" />
-        <line x1="13.5" y1="18.5" x2="9" y2="21" />
-        <line x1="16" y1="20.5" x2="16" y2="25" />
-      </svg>
-    ),
-  },
-  {
-    number: "02",
-    title: "Comfortable Knees & Easy Movement",
-    description:
-      "Say goodbye to stiff, aching joints so you can walk, bend, pray, and play with your family with ease.",
-    icon: (
-      <svg className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
-        {/* Joint Bones */}
-        <path d="M16 6 C13 6 12 10 12 13 C14 14 18 14 20 13 C20 10 19 6 16 6 Z" strokeLinejoin="round" />
-        <path d="M16 26 C13 26 12 22 12 19 C14 18 18 18 20 19 C20 22 19 26 16 26 Z" strokeLinejoin="round" />
-        {/* Cartilage Disc Gap */}
-        <ellipse cx="16" cy="16" rx="6" ry="2" strokeDasharray="2 2" />
-        {/* Protection Waves */}
-        <path d="M8 12 C6 14 6 18 8 20" strokeLinecap="round" />
-        <path d="M24 12 C26 14 26 18 24 20" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    number: "03",
-    title: "Steady Blood Sugar & Lasting Energy",
-    description:
-      "Prevents that heavy, sleepy feeling after meals and keeps your daily energy smooth all day long.",
-    icon: (
-      <svg className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
-        {/* Blood Drop */}
-        <path d="M16 5 C16 5 9 14 9 20 A7 7 0 0 0 23 20 C23 14 16 5 16 5 Z" strokeLinejoin="round" />
-        {/* 3D Sugar Glucose Cube Inside */}
-        <path d="M19 18 L24 15 L24 21 L19 24 Z" fill="#d9a74a" fillOpacity="0.2" stroke="#e58e1b" strokeWidth="1.5" />
-        <path d="M14 18 L19 15 L19 21 L14 24 Z" fill="#d9a74a" fillOpacity="0.1" stroke="#e58e1b" strokeWidth="1.5" />
-        <path d="M14 18 L19 15 L24 18 L19 21 Z" fill="#d9a74a" fillOpacity="0.3" stroke="#e58e1b" strokeWidth="1.5" />
-      </svg>
-    ),
-  },
-  {
-    number: "04",
-    title: "Loving Care for Liver & Kidneys",
-    description:
-      "Gently cleanses and shields your vital organs from daily stress, heavy foods, and long-term medications.",
-    icon: (
-      <svg className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
-        {/* Organ Shield Contour */}
-        <path d="M16 5 C10 5 7 9 7 15 C7 21 11 26 16 27 C21 26 25 21 25 15 C25 9 22 5 16 5 Z" strokeLinejoin="round" />
-        <path d="M11 12 C13 16 19 16 21 12" strokeLinecap="round" />
-        {/* Gold Medical Plus Circle */}
-        <circle cx="21" cy="20" r="4.5" fill="#e58e1b" stroke="#e58e1b" strokeWidth="1" />
-        <path d="M21 18 v4 M19 20 h4" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    number: "05",
-    title: "Smooth, Healthy Blood Circulation",
-    description:
-      "Keeps your blood flowing smoothly so your hands, feet, and whole body feel warm and energized.",
-    icon: (
-      <svg className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
-        {/* Vascular Artery Tube */}
-        <path d="M11 6 C13 11 10 17 12 26" strokeLinecap="round" strokeWidth="2" />
-        <path d="M21 6 C23 11 20 17 22 26" strokeLinecap="round" strokeWidth="2" />
-        {/* Flowing Cells & Gold Active Particles */}
-        <circle cx="16" cy="10" r="2" fill="#d9a74a" fillOpacity="0.4" />
-        <circle cx="17" cy="16" r="2.5" fill="#e58e1b" stroke="#e58e1b" />
-        <circle cx="15" cy="22" r="1.8" fill="#d9a74a" />
-        <circle cx="18" cy="25" r="1.2" fill="#e58e1b" />
-      </svg>
-    ),
-  },
-  {
-    number: "06",
-    title: "Gentle Relief from Cramps & Tightness",
-    description:
-      "Naturally relaxes tight muscles to soothe monthly period pain and uncomfortable stomach cramps.",
-    icon: (
-      <svg className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
-        {/* Torso / Abdomen Silhouette */}
-        <path d="M9 7 C12 12 12 18 8 25 M23 7 C20 12 20 18 24 25" strokeLinecap="round" />
-        {/* Calming Core / Radiating Ring */}
-        <circle cx="16" cy="16" r="3" fill="#e58e1b" stroke="#e58e1b" />
-        <circle cx="16" cy="16" r="6.5" strokeDasharray="2 2" />
-        <path d="M16 21 L16 25 M14 27 L16 25 L18 27" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    number: "07",
-    title: "Happy Tummy & Goodbye Bloating",
-    description:
-      "Quickly calms trapped wind, indigestion, and acid burn so you can enjoy meals with peace of mind.",
-    icon: (
-      <svg className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
-        {/* Stomach / GI Tract */}
-        <path d="M15 6 C17 6 19 8 19 11 C20 16 24 18 24 21 C24 25 19 27 15 27 C10 27 8 23 8 18 C8 13 11 8 15 6 Z" strokeLinejoin="round" />
-        <path d="M15 14 v5 M12.5 16.5 h5" stroke="#e58e1b" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    number: "08",
-    title: "Clear Mind & Sharp Focus",
-    description:
-      "Lifts morning brain fog, strengthens your memory, and keeps you alert and refreshed all day.",
-    icon: (
-      <svg className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
-        {/* Brain Left & Right Lobes */}
-        <path d="M16 8 C13 6 8 8 8 13 C8 16 10 18 10 21 C10 24 13 25 16 25 M16 8 C19 6 24 8 24 13 C24 16 22 18 22 21 C22 24 19 25 16 25" strokeLinejoin="round" />
-        <path d="M16 8 L16 25" strokeDasharray="1.5 1.5" />
-        <circle cx="16" cy="14" r="1.5" fill="#e58e1b" />
-        <path d="M12 14 C12 17 14 18 16 18 M20 14 C20 17 18 18 16 18" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    number: "09",
-    title: "Strong Everyday Family Immunity",
-    description:
-      "Naturally strengthens your body's daily defenses so you stay resilient, healthy, and active.",
-    icon: (
-      <svg className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
-        {/* Shield */}
-        <path d="M16 5 L24 8 V16 C24 22 16 26 16 26 C16 26 8 22 8 16 V8 L16 5 Z" strokeLinejoin="round" />
-        {/* Plus Symbol */}
-        <path d="M16 11 v8 M12 15 h8" stroke="#d9a74a" strokeWidth="1.8" strokeLinecap="round" />
-        {/* Defense Ring / Active Gear */}
-        <circle cx="21" cy="20" r="3.5" fill="#e58e1b" stroke="#e58e1b" />
-        <circle cx="21" cy="20" r="1.5" fill="#0d271c" />
-      </svg>
-    ),
-  },
+const benefitIcons = [
+  // 01: Potency / Molecules
+  (
+    <svg key="1" className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
+      <circle cx="16" cy="16" r="4.5" strokeDasharray="1 1" />
+      <circle cx="9" cy="9" r="2.5" />
+      <circle cx="23" cy="9" r="2.5" />
+      <circle cx="25" cy="22" r="3" fill="#e58e1b" stroke="#e58e1b" />
+      <circle cx="7" cy="22" r="2.5" />
+      <circle cx="16" cy="27" r="2" />
+      <line x1="11" y1="10.5" x2="14" y2="13.5" />
+      <line x1="21" y1="10.5" x2="18" y2="13.5" />
+      <line x1="18.5" y1="18.5" x2="22.5" y2="21" />
+      <line x1="13.5" y1="18.5" x2="9" y2="21" />
+      <line x1="16" y1="20.5" x2="16" y2="25" />
+    </svg>
+  ),
+  // 02: Joints & Bones
+  (
+    <svg key="2" className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
+      <path d="M16 6 C13 6 12 10 12 13 C14 14 18 14 20 13 C20 10 19 6 16 6 Z" strokeLinejoin="round" />
+      <path d="M16 26 C13 26 12 22 12 19 C14 18 18 18 20 19 C20 22 19 26 16 26 Z" strokeLinejoin="round" />
+      <ellipse cx="16" cy="16" rx="6" ry="2" strokeDasharray="2 2" />
+      <path d="M8 12 C6 14 6 18 8 20" strokeLinecap="round" />
+      <path d="M24 12 C26 14 26 18 24 20" strokeLinecap="round" />
+    </svg>
+  ),
+  // 03: Sugar & Energy Drop
+  (
+    <svg key="3" className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
+      <path d="M16 5 C16 5 9 14 9 20 A7 7 0 0 0 23 20 C23 14 16 5 16 5 Z" strokeLinejoin="round" />
+      <path d="M19 18 L24 15 L24 21 L19 24 Z" fill="#d9a74a" fillOpacity="0.2" stroke="#e58e1b" strokeWidth="1.5" />
+      <path d="M14 18 L19 15 L19 21 L14 24 Z" fill="#d9a74a" fillOpacity="0.1" stroke="#e58e1b" strokeWidth="1.5" />
+      <path d="M14 18 L19 15 L24 18 L19 21 Z" fill="#d9a74a" fillOpacity="0.3" stroke="#e58e1b" strokeWidth="1.5" />
+    </svg>
+  ),
+  // 04: Liver / Organs Shield
+  (
+    <svg key="4" className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
+      <path d="M16 5 C10 5 7 9 7 15 C7 21 11 26 16 27 C21 26 25 21 25 15 C25 9 22 5 16 5 Z" strokeLinejoin="round" />
+      <path d="M11 12 C13 16 19 16 21 12" strokeLinecap="round" />
+      <circle cx="21" cy="20" r="4.5" fill="#e58e1b" stroke="#e58e1b" strokeWidth="1" />
+      <path d="M21 18 v4 M19 20 h4" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  ),
+  // 05: Blood Circulation
+  (
+    <svg key="5" className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
+      <path d="M11 6 C13 11 10 17 12 26" strokeLinecap="round" strokeWidth="2" />
+      <path d="M21 6 C23 11 20 17 22 26" strokeLinecap="round" strokeWidth="2" />
+      <circle cx="16" cy="10" r="2" fill="#d9a74a" fillOpacity="0.4" />
+      <circle cx="17" cy="16" r="2.5" fill="#e58e1b" stroke="#e58e1b" />
+      <circle cx="15" cy="22" r="1.8" fill="#d9a74a" />
+      <circle cx="18" cy="25" r="1.2" fill="#e58e1b" />
+    </svg>
+  ),
+  // 06: Cramps & Muscle Relax
+  (
+    <svg key="6" className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
+      <path d="M9 7 C12 12 12 18 8 25 M23 7 C20 12 20 18 24 25" strokeLinecap="round" />
+      <circle cx="16" cy="16" r="3" fill="#e58e1b" stroke="#e58e1b" />
+      <circle cx="16" cy="16" r="6.5" strokeDasharray="2 2" />
+      <path d="M16 21 L16 25 M14 27 L16 25 L18 27" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  // 07: Stomach / GI Tract
+  (
+    <svg key="7" className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
+      <path d="M15 6 C17 6 19 8 19 11 C20 16 24 18 24 21 C24 25 19 27 15 27 C10 27 8 23 8 18 C8 13 11 8 15 6 Z" strokeLinejoin="round" />
+      <path d="M15 14 v5 M12.5 16.5 h5" stroke="#e58e1b" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  ),
+  // 08: Brain Focus & Clarity
+  (
+    <svg key="8" className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
+      <path d="M16 8 C13 6 8 8 8 13 C8 16 10 18 10 21 C10 24 13 25 16 25 M16 8 C19 6 24 8 24 13 C24 16 22 18 22 21 C22 24 19 25 16 25" strokeLinejoin="round" />
+      <path d="M16 8 L16 25" strokeDasharray="1.5 1.5" />
+      <circle cx="16" cy="14" r="1.5" fill="#e58e1b" />
+      <path d="M12 14 C12 17 14 18 16 18 M20 14 C20 17 18 18 16 18" strokeLinecap="round" />
+    </svg>
+  ),
+  // 09: Immunity Shield
+  (
+    <svg key="9" className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
+      <path d="M16 5 L24 8 V16 C24 22 16 26 16 26 C16 26 8 22 8 16 V8 L16 5 Z" strokeLinejoin="round" />
+      <path d="M16 11 v8 M12 15 h8" stroke="#d9a74a" strokeWidth="1.8" strokeLinecap="round" />
+      <circle cx="21" cy="20" r="3.5" fill="#e58e1b" stroke="#e58e1b" />
+      <circle cx="21" cy="20" r="1.5" fill="#0d271c" />
+    </svg>
+  ),
 ];
 
 export default function ScientificBenefits() {
+  const { t } = useLanguage();
+
   return (
     <section id="benefits" className="relative w-full py-16 sm:py-24 overflow-hidden bg-[#FAF6F0] scroll-mt-20">
       
-      {/* Background Ambience & Delicate Leaves */}
+      {/* Background Ambience */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-96 h-96 bg-[#c59b3f]/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#0d271c]/5 rounded-full blur-3xl" />
@@ -189,15 +116,15 @@ export default function ScientificBenefits() {
           <div className="inline-flex items-center gap-2 text-[#c59b3f] font-serif text-[11px] sm:text-xs font-bold tracking-[0.24em] uppercase">
             <span>—</span>
             <span className="text-[10px]">❖</span>
-            <span>FEEL THE DIFFERENCE EVERY DAY</span>
+            <span>{t.benefits.tag}</span>
             <span className="text-[10px]">❖</span>
             <span>—</span>
           </div>
 
           {/* Main Headline */}
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-[45px] font-bold text-[#142319] leading-[1.18] tracking-tight">
-            9 Simple Ways Black Turmeric<br />
-            Helps You <span className="text-[#c59b3f] font-serif">Feel Your Best</span>
+            {t.benefits.mainTitle}<br />
+            <span className="text-[#c59b3f] font-serif">{t.benefits.highlight}</span>
           </h2>
 
           {/* Small gold floral ornament */}
@@ -205,14 +132,14 @@ export default function ScientificBenefits() {
 
           {/* Subtitle */}
           <p className="text-[#59665f] text-xs sm:text-[14px] font-medium leading-relaxed max-w-xl mx-auto">
-            Clear, proven natural benefits to help you move freely, digest peacefully, and live without daily discomfort.
+            {t.benefits.subtitle}
           </p>
 
         </div>
 
         {/* 9 Scientific Benefit Cards (3x3 Grid) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          {scientificBenefits.map((benefit) => (
+          {t.benefits.items.map((benefit, idx) => (
             <div
               key={benefit.number}
               className="group relative flex items-start gap-4 sm:gap-5 rounded-2xl bg-white/95 backdrop-blur-md border border-[#ede1d3] p-5 sm:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 min-h-[145px]"
@@ -221,7 +148,7 @@ export default function ScientificBenefits() {
               <div className="relative flex-shrink-0">
                 {/* Circular Icon Container */}
                 <div className="w-15 h-15 sm:w-16 sm:h-16 rounded-full bg-[#0d271c] border border-[#c59b3f]/40 flex items-center justify-center shadow-inner group-hover:border-[#e58e1b] group-hover:scale-105 transition-all duration-300">
-                  {benefit.icon}
+                  {benefitIcons[idx]}
                 </div>
 
                 {/* Number Badge (Top-Left of Circle) */}
@@ -243,8 +170,6 @@ export default function ScientificBenefits() {
             </div>
           ))}
         </div>
-
-        
 
       </div>
     </section>
