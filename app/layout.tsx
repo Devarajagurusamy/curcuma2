@@ -21,9 +21,9 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "CurcumaCaesia | Malaysia's University-Verified Black Turmeric",
+  title: "CurcumaCaesia | Natural Black Turmeric for Pain-Free, Energetic Days",
   description:
-    "Standardised Curcuma Caesia Roxb., verified by four Malaysian universities. The Gold of Wellness.",
+    "Pure, natural Malaysian black turmeric to soothe joint pain, calm your digestion, and help you wake up feeling energetic and refreshed every day.",
 };
 
 export default function RootLayout({

@@ -28,7 +28,7 @@ export default function Footer() {
               />
             </a>
             <p className="text-[#8ba294] text-xs leading-relaxed max-w-xs font-medium">
-              Authentic Curcuma Caesia Roxb. (Black Turmeric) organic plantation &amp; bioactive herbal extraction heritage.
+              Dedicated to bringing natural comfort, pain-free mobility, and peace of mind to Malaysian families through pure, authentic black turmeric.
             </p>
           </div>
 
@@ -53,51 +53,56 @@ export default function Footer() {
           {/* Column 2: Quick Links */}
           <div className="lg:col-span-2 space-y-3">
             <h4 className="font-sans text-xs font-bold tracking-[0.14em] text-[#d9a74a] uppercase">
-              QUICK LINKS
+              EXPLORE
             </h4>
             <ul className="space-y-2 text-xs text-[#8ba294]">
               <li>
                 <a href="#story" className="hover:text-[#d9a74a] transition-colors">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#story" className="hover:text-[#d9a74a] transition-colors">
-                  Our Story
+                  Our Healing Story
                 </a>
               </li>
               <li>
                 <a href="#benefits" className="hover:text-[#d9a74a] transition-colors">
-                  Benefits
+                  Health Benefits
                 </a>
               </li>
               <li>
                 <a href="#science" className="hover:text-[#d9a74a] transition-colors">
-                  Science &amp; Studies
+                  University Research
                 </a>
               </li>
               <li>
                 <a href="#reviews" className="hover:text-[#d9a74a] transition-colors">
-                  Customer Reviews
+                  Customer Stories
                 </a>
               </li>
               <li>
                 <a href="#order" className="hover:text-[#d9a74a] transition-colors">
-                  Order Now
+                  Order Your Bottle
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Customer Service */}
+          {/* Column 3: Customer Care */}
           <div className="lg:col-span-2 space-y-3">
             <h4 className="font-sans text-xs font-bold tracking-[0.14em] text-[#d9a74a] uppercase">
-              CUSTOMER SERVICE
+              HELP &amp; CARE
             </h4>
             <ul className="space-y-2 text-xs text-[#8ba294]">
               <li>
-                <a href="#refund" className="hover:text-[#d9a74a] transition-colors">
-                  Refund &amp; Return Policy
+                <a href="#faq" className="hover:text-[#d9a74a] transition-colors">
+                  Common Questions
+                </a>
+              </li>
+              <li>
+                <a href="#order" className="hover:text-[#d9a74a] transition-colors">
+                  30-Day Guarantee
+                </a>
+              </li>
+              <li>
+                <a href="#order" className="hover:text-[#d9a74a] transition-colors">
+                  Shipping &amp; Delivery
                 </a>
               </li>
               <li>
@@ -110,23 +115,13 @@ export default function Footer() {
                   Terms &amp; Conditions
                 </a>
               </li>
-              <li>
-                <a href="#shipping" className="hover:text-[#d9a74a] transition-colors">
-                  Shipping &amp; Delivery
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="hover:text-[#d9a74a] transition-colors">
-                  FAQ &amp; Help Center
-                </a>
-              </li>
             </ul>
           </div>
 
           {/* Column 4: Contact */}
           <div className="lg:col-span-2 space-y-3">
             <h4 className="font-sans text-xs font-bold tracking-[0.14em] text-[#d9a74a] uppercase">
-              CONTACT
+              WE ARE HERE FOR YOU
             </h4>
             <div className="space-y-2.5 text-xs text-[#8ba294]">
               <div className="flex items-center gap-2">

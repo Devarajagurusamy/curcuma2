@@ -147,11 +147,11 @@ export default function OrderModal({
             />
             <div>
               <h3 className="font-serif text-sm sm:text-base font-bold text-white leading-tight">
-                Secure Express Order
+                Express Order • Delivered to Your Doorstep
               </h3>
               <div className="flex items-center gap-1.5 text-[11px] text-[#e5b869] font-medium">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>In Stock • Ready for Delivery</span>
+                <span>Fresh Harvest in Stock • Ships Today</span>
               </div>
             </div>
           </div>
@@ -176,7 +176,7 @@ export default function OrderModal({
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#142319] flex items-center gap-1.5">
                     <span className="w-5 h-5 rounded-full bg-[#c58b28] text-white text-[11px] flex items-center justify-center font-bold">1</span>
-                    Select Your Routine
+                    Choose Your Healing Routine
                   </span>
                   <span className="text-[11px] text-[#c58b28] font-bold">
                     Free Nationwide Delivery (WM)
@@ -241,7 +241,7 @@ export default function OrderModal({
               <div className="space-y-3 pt-2">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#142319] flex items-center gap-1.5">
                   <span className="w-5 h-5 rounded-full bg-[#c58b28] text-white text-[11px] flex items-center justify-center font-bold">2</span>
-                  Delivery Information
+                  Where Should We Deliver Your Package?
                 </span>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -283,7 +283,7 @@ export default function OrderModal({
                       type="text"
                       name="address"
                       required
-                      placeholder="No. Unit, Street, Taman / Condominium"
+                      placeholder="No. House / Unit, Street, Area / Condominium"
                       value={formData.address}
                       onChange={handleInputChange}
                       className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-xs text-[#142319] focus:outline-none focus:border-[#c58b28] focus:ring-1 focus:ring-[#c58b28]"
@@ -329,7 +329,7 @@ export default function OrderModal({
               <div className="space-y-3 pt-2">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#142319] flex items-center gap-1.5">
                   <span className="w-5 h-5 rounded-full bg-[#c58b28] text-white text-[11px] flex items-center justify-center font-bold">3</span>
-                  Payment Method
+                  How Would You Like to Pay?
                 </span>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
@@ -351,7 +351,7 @@ export default function OrderModal({
                     />
                     <div className="flex items-center gap-1.5 text-xs">
                       <Truck className="w-3.5 h-3.5 text-[#c58b28]" />
-                      <span>Cash on Delivery (COD)</span>
+                      <span>Pay on Delivery (COD)</span>
                     </div>
                   </label>
 
@@ -373,7 +373,7 @@ export default function OrderModal({
                     />
                     <div className="flex items-center gap-1.5 text-xs">
                       <CreditCard className="w-3.5 h-3.5 text-[#c58b28]" />
-                      <span>Online Banking / FPX</span>
+                      <span>Online Banking (FPX)</span>
                     </div>
                   </label>
 
@@ -404,19 +404,19 @@ export default function OrderModal({
               {/* Order Summary Box */}
               <div className="bg-[#FAF7F2] p-4 rounded-2xl border border-[#ede1d3] space-y-2 text-xs">
                 <div className="flex justify-between text-[#55635b]">
-                  <span>Selected: {currentPkg.name} ({currentPkg.capsules.split(" ")[0]} Caps)</span>
+                  <span>Selected Package: {currentPkg.name} ({currentPkg.capsules.split(" ")[0]} Caps)</span>
                   <span className="font-semibold text-[#142319]">RM {currentPkg.price.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-[#55635b]">
-                  <span>Shipping &amp; Handling</span>
-                  <span className="font-bold text-emerald-700 uppercase">FREE (WM)</span>
+                  <span>Doorstep Delivery</span>
+                  <span className="font-bold text-emerald-700 uppercase">FREE (West Malaysia)</span>
                 </div>
                 <div className="flex justify-between text-emerald-800 font-medium">
-                  <span>Total Discount Saved</span>
+                  <span>Your Savings Today</span>
                   <span>- RM {totalSavings.toFixed(2)}</span>
                 </div>
                 <div className="pt-2 border-t border-[#e2d5c2] flex justify-between items-baseline text-sm font-extrabold text-[#142319]">
-                  <span>Total Payable Amount:</span>
+                  <span>Total Amount:</span>
                   <span className="font-serif text-xl text-[#c58b28]">
                     RM {totalPrice.toFixed(2)}
                   </span>
@@ -428,7 +428,7 @@ export default function OrderModal({
                 type="submit"
                 className="w-full py-4 rounded-2xl bg-[#c58b28] hover:bg-[#b0781e] text-white text-sm font-extrabold tracking-wider uppercase shadow-[0_4px_18px_rgba(197,139,40,0.45)] hover:shadow-[0_6px_24px_rgba(197,139,40,0.6)] hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer flex items-center justify-center gap-2"
               >
-                <span>CONFIRM &amp; PLACE ORDER (RM {totalPrice.toFixed(2)})</span>
+                <span>CONFIRM MY ORDER (RM {totalPrice.toFixed(2)})</span>
                 <ArrowRight className="w-4 h-4 stroke-[2.5]" />
               </button>
 
@@ -438,7 +438,7 @@ export default function OrderModal({
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-700" /> 30-Day Money Back Guarantee
                 </span>
                 <span>•</span>
-                <span>🔒 256-Bit SSL Encrypted</span>
+                <span>🔒 100% Safe &amp; Private</span>
               </div>
 
             </form>
@@ -451,13 +451,13 @@ export default function OrderModal({
 
               <div>
                 <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 font-bold text-xs uppercase tracking-wider mb-2">
-                  Order Successfully Placed!
+                  Order Placed Successfully!
                 </span>
                 <h3 className="font-serif text-2xl font-bold text-[#142319]">
                   Thank You, {formData.fullName || "Valued Customer"}!
                 </h3>
                 <p className="text-xs text-[#525f57] max-w-md mx-auto mt-1 leading-relaxed">
-                  Your order has been recorded. Our team will prepare and dispatch your fresh authentic Curcuma Caesia harvest immediately.
+                  We are preparing your fresh black turmeric harvest with love and care. You are taking a wonderful step toward feeling lighter, happier, and pain-free every day.
                 </p>
               </div>
 
@@ -468,7 +468,7 @@ export default function OrderModal({
                   <span className="font-mono font-extrabold text-[#142319]">{orderId}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-[#68756d]">Package:</span>
+                  <span className="text-[#68756d]">Selected Routine:</span>
                   <span className="font-bold text-[#142319]">{currentPkg.name}</span>
                 </div>
                 <div className="flex justify-between">
@@ -476,11 +476,11 @@ export default function OrderModal({
                   <span className="font-serif font-black text-[#c58b28] text-sm">RM {totalPrice.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-[#68756d]">Payment:</span>
+                  <span className="text-[#68756d]">Payment Method:</span>
                   <span className="font-semibold text-[#142319] uppercase">{paymentMethod.toUpperCase()}</span>
                 </div>
                 <div className="flex justify-between pt-1 border-t border-[#e2d5c2]">
-                  <span className="text-[#68756d]">Delivery Destination:</span>
+                  <span className="text-[#68756d]">Delivering To:</span>
                   <span className="font-medium text-[#142319] text-right truncate max-w-[200px]">{formData.city || formData.state}, Malaysia</span>
                 </div>
               </div>
@@ -490,15 +490,15 @@ export default function OrderModal({
                   onClick={onClose}
                   className="px-6 py-2.5 rounded-full bg-gray-100 hover:bg-gray-200 text-[#142319] text-xs font-bold tracking-wider uppercase transition-all cursor-pointer"
                 >
-                  Continue Browsing
+                  Return to Home
                 </button>
                 <a
                   href={`https://wa.me/60123456789?text=Hi%2C%20I%20just%20placed%20order%20${orderId}%20for%20${encodeURIComponent(currentPkg.name)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-2.5 rounded-full bg-[#15803d] hover:bg-[#166534] text-white text-xs font-bold tracking-wider uppercase shadow-md transition-all inline-flex items-center gap-2"
+                  className="px-6 py-2.5 rounded-full bg-[#15803d] hover:bg-[#166534] text-white text-xs font-bold tracking-wider uppercase shadow-md transition-all inline-flex items-center gap-2 cursor-pointer"
                 >
-                  <span>Track Order on WhatsApp</span>
+                  <span>Track on WhatsApp</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>

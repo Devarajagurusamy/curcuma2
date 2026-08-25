@@ -20,51 +20,51 @@ const faqList: FAQItem[] = [
   {
     id: 1,
     category: "science",
-    question: "What makes Curcuma Caesia (Black Turmeric) superior to common Yellow Turmeric?",
+    question: "Why is Black Turmeric so much better than normal yellow turmeric?",
     answer:
-      "Curcuma Caesia Roxb. contains more than double (14.8%) the active bio-therapeutic compound ar-Curcumene compared to common yellow turmeric. It features a unique bluish-purple rhizome interior packed with rare anthocyanins, anti-inflammatory sesquiterpenoids, and superior bioavailability for rapid cellular absorption without requiring black pepper extract additives.",
+      "Black turmeric is a rare, powerful healing herb. Unlike ordinary cooking turmeric, authentic black turmeric contains twice the active healing strength (ar-Curcumene) and deep purple natural antioxidants. Your body absorbs it much faster and easier, so you feel soothing relief in your knees, digestion, and daily energy without having to take black pepper or chemical boosters.",
   },
   {
     id: 2,
     category: "usage",
-    question: "How should I consume Malaysian Royal Gold capsules for optimal results?",
+    question: "How and when should I take my daily capsules?",
     answer:
-      "Take 2 capsules (900mg total) once daily, preferably in the morning or after a main meal with a full glass of warm water. For sustained joint mobility, digestive soothing, and metabolic vitality, continuous daily consumption for at least 3 to 4 weeks is strongly recommended.",
+      "Simply take 2 capsules once every day with a warm glass of water, ideally in the morning after your breakfast. Drinking plenty of water throughout the day helps your body gently absorb all the natural nutrients. Taking it every day for 3 to 4 weeks gives your body the deep, lasting relief it needs.",
   },
   {
     id: 3,
     category: "safety",
-    question: "Is this product Halal, MeSTI, and certified by Malaysian authorities?",
+    question: "Is this product Halal, certified safe, and clean?",
     answer:
-      "Yes. Malaysian Royal Gold is produced in a certified GMP and HACCP facility in Malaysia, accredited under the Ministry of Health food safety scheme (MeSTI Reg. No. 78/D/000512-052025), and is certified Halal by JAKIM (Cert. No. JAKIM.700-2/3/1 014-01/2025). The capsules are 100% vegetarian plant-derived.",
+      "Yes, 100%. Our black turmeric is grown cleanly in Malaysia and prepared in certified facilities approved by the Ministry of Health (MeSTI) and certified Halal by JAKIM. The capsules are 100% vegetarian plant capsules with zero chemicals, zero heavy metals, and zero artificial fillers.",
   },
   {
     id: 4,
     category: "safety",
-    question: "Can I take this if I have diabetes, high blood pressure, or take daily medication?",
+    question: "Can I take this if I have high blood pressure, diabetes, or take daily medication?",
     answer:
-      "Clinical and metabolic studies from UPM and Melaka Biotech confirm that Curcuma Caesia supports healthy blood glucose stability and cardiovascular circulation. However, if you are currently taking prescription blood thinners or are pregnant/breastfeeding, we recommend consulting your healthcare provider or spacing consumption 1 to 2 hours apart from regular medications.",
+      "Yes! University studies show black turmeric is gentle on the body and helps support healthy blood sugar balance and smooth blood flow. If you are taking prescription medicine, we simply recommend leaving 1 to 2 hours between your regular medicine and your black turmeric, or checking with your family doctor.",
   },
   {
     id: 5,
     category: "usage",
-    question: "How soon can I expect to notice positive health changes?",
+    question: "How fast will I start feeling better?",
     answer:
-      "Most customers experience noticeable relief from stomach bloating, trapped gas, and sluggish fatigue within the first 3 to 7 days. Sustained joint comfort, smoother morning mobility, and deeper sleep quality typically become prominent after 2 to 3 weeks of daily routine.",
+      "Many customers tell us their stomach bloating, trapped gas, and tiredness begin feeling better within the first 3 to 7 days. For deeper comfort—like easier knee bending, lighter morning joints, and restful sleep—you will notice a wonderful difference after 2 to 3 weeks of daily routine.",
   },
   {
     id: 6,
     category: "shipping",
-    question: "How does the 30-Day Money Back Guarantee work?",
+    question: "What is your 30-Day Money Back Guarantee?",
     answer:
-      "We stand behind the authenticity and quality of our authentic Johor plantation harvest with 100% confidence. If you are not satisfied with your purchase within 30 days of receiving your package, simply contact our customer care team for an exchange or full refund, hassle-free.",
+      "We want you to feel completely comfortable and cared for. If you try our black turmeric and do not feel a positive difference in your daily wellness within 30 days, just reach out to our friendly support team on WhatsApp for a hassle-free exchange or full refund.",
   },
   {
     id: 7,
     category: "shipping",
-    question: "How long does shipping take and is Cash on Delivery (COD) available?",
+    question: "How long does delivery take, and can I pay upon delivery (COD)?",
     answer:
-      "All orders are dispatched within 24 hours. West Malaysia deliveries arrive within 1 to 3 business days with Free Shipping. East Malaysia (Sabah & Sarawak) deliveries arrive in 3 to 5 business days. Cash on Delivery (COD) is readily available during checkout.",
+      "We pack your order with care and ship within 24 hours. West Malaysia orders arrive at your doorstep in 1 to 3 working days with Free Shipping. Sabah & Sarawak orders arrive in 3 to 5 days. You can easily choose Cash on Delivery (COD) to pay the courier directly when your parcel arrives safely.",
   },
 ];
 
@@ -101,28 +101,27 @@ export default function FAQSection() {
           <div className="inline-flex items-center gap-2 text-[#c59b3f] font-serif text-[11px] sm:text-xs font-bold tracking-[0.24em] uppercase">
             <span>—</span>
             <span className="text-[10px]">❖</span>
-            <span>FREQUENTLY ASKED QUESTIONS</span>
+            <span>CLEAR, HONEST ANSWERS</span>
             <span className="text-[10px]">❖</span>
             <span>—</span>
           </div>
 
           {/* Main Headline */}
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#142319] leading-tight tracking-tight">
-            Everything You Need To Know<br />
-            About <span className="text-[#c59b3f]">Curcuma Caesia</span>
+            Frequently Asked Questions
           </h2>
 
           {/* Subtitle */}
           <p className="text-[#59665f] text-xs sm:text-sm font-medium leading-relaxed max-w-xl mx-auto pt-1">
-            Clear, science-backed answers regarding authenticity, daily dosage, health benefits, and delivery.
+            Simple, honest answers to help you and your family make the best choice for your daily health.
           </p>
 
           {/* Category Filter Tabs */}
           <div className="flex items-center sm:justify-center gap-2 pt-5 overflow-x-auto scrollbar-none pb-2 sm:pb-0 px-2">
             {[
               { id: "all", label: "All Questions" },
-              { id: "science", label: "Authenticity & Science" },
-              { id: "usage", label: "Dosage & Usage" },
+              { id: "science", label: "Why Black Turmeric" },
+              { id: "usage", label: "How to Take" },
               { id: "safety", label: "Safety & Halal" },
               { id: "shipping", label: "Delivery & Guarantee" },
             ].map((tab) => (
@@ -211,10 +210,10 @@ export default function FAQSection() {
             </div>
             <div>
               <h4 className="font-serif text-base font-bold text-[#142319]">
-                Still have a question?
+                Need a friendly word or have questions?
               </h4>
               <p className="text-xs text-[#637067] mt-0.5">
-                Our Malaysian herbal specialists are ready to help you on WhatsApp.
+                Our caring team is here to listen and help you on WhatsApp anytime.
               </p>
             </div>
           </div>
@@ -223,9 +222,9 @@ export default function FAQSection() {
             href="https://wa.me/60123456789"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#15803d] hover:bg-[#166534] text-white text-xs font-bold tracking-wider uppercase shadow-md hover:shadow-lg transition-all flex-shrink-0"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#15803d] hover:bg-[#166534] text-white text-xs font-bold tracking-wider uppercase shadow-md hover:shadow-lg transition-all flex-shrink-0 cursor-pointer"
           >
-            <span>CHAT ON WHATSAPP</span>
+            <span>CHAT WITH US ON WHATSAPP</span>
           </a>
         </div>
 

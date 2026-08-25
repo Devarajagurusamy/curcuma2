@@ -6,46 +6,46 @@ import Image from "next/image";
 const heritageSteps = [
   {
     step: "01",
-    subtitle: "1930s",
-    title: "Tuan Ismail's Discovery",
+    subtitle: "1930s Discovery",
+    title: "A Search for Real Healing",
     description:
-      "Black turmeric (Kali Haldi) was brought from India for its legendary restorative stamina and healthy circulation properties.",
+      "Tuan Ismail brought pure black turmeric to his family, searching for a natural way to relieve deep fatigue, ease body aches, and restore strength.",
     imageSrc: "/images/heritage-step-1.jpg",
-    imageAlt: "1930s Founder Tuan Ismail at plantation homestead",
+    imageAlt: "Founder Tuan Ismail at plantation homestead",
   },
   {
     step: "02",
     subtitle: "Johor Homestead",
-    title: "Miraculous Recovery",
+    title: "Standing Strong Again",
     description:
-      "Tuan Saipullah recovered from being bedridden after drinking the fresh rhizome brew, demonstrating the plant's profound vitality power.",
+      "When a family member was too weak to get out of bed, drinking this fresh herbal tea helped them regain energy, walk comfortably, and smile again.",
     imageSrc: "/images/heritage-step-2.jpg",
     imageAlt: "Fresh cut black turmeric rhizomes with rich purple interior",
   },
   {
     step: "03",
-    subtitle: "Laboratory Proof",
-    title: "Melaka Biotech Nutrition Analysis",
+    subtitle: "Tested & Certified",
+    title: "Clean & Safe for Your Body",
     description:
-      "Official testing by Melaka Biotechnology Corporation (COA: MBC-2025-CF-0380) confirms healthy parameters: low sugar (3.4g) and very low sodium (12mg).",
+      "Official laboratory tests proved it is naturally rich in soothing nutrients, very low in sugar and salt, and 100% safe for daily family wellness.",
     imageSrc: "/images/heritage-step-3.jpg",
-    imageAlt: "Melaka Biotech laboratory flask analysis with lab tested seal",
+    imageAlt: "Laboratory analysis and safety test report",
   },
   {
     step: "04",
-    subtitle: "Your Daily Ritual",
-    title: "Curcuma Caesia Kopi Herba",
+    subtitle: "Your Daily Routine",
+    title: "A Cup of Warm Comfort",
     description:
-      "Carefully blended into an exquisite daily cup that unites rich coffee taste with the therapeutic power of genuine black turmeric.",
+      "Carefully prepared so you can easily enjoy lighter joints, calm digestion, and fresh morning energy every single day.",
     imageSrc: "/images/heritage-step-4.jpg",
-    imageAlt: "Curcuma Caesia Kopi Herba hot coffee cup ritual",
+    imageAlt: "Daily herbal coffee and wellness ritual",
   },
 ];
 
 export default function BotanicalHeritage() {
   return (
     <section id="story" className="relative w-full py-16 sm:py-24 overflow-hidden bg-[#FBF7F2] scroll-mt-20">
-      {/* Background Graphic Image (User-Provided) */}
+      {/* Background Graphic Image */}
       <div 
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat pointer-events-none opacity-90"
         style={{ backgroundImage: "url('/images/heritage-bg.png')" }}
@@ -54,7 +54,7 @@ export default function BotanicalHeritage() {
       {/* Subtle Ambient Vignette Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/40 pointer-events-none" />
 
-      {/* Left Bottom Floating "HERITAGE MEETS WELLNESS" Badge */}
+      {/* Left Bottom Floating Badge */}
       <div className="hidden lg:flex absolute left-0 bottom-16 z-20 bg-[#0a1b24] text-white py-5 px-4 rounded-r-2xl shadow-2xl border-y border-r border-[#c59b3f]/30 flex-col items-center text-center gap-2 max-w-[100px]">
         {/* Gold Leaf Icon */}
         <div className="w-7 h-7 text-[#e2aa47]">
@@ -63,7 +63,7 @@ export default function BotanicalHeritage() {
           </svg>
         </div>
         <span className="font-serif text-[9px] font-bold tracking-[0.18em] text-[#e2aa47] uppercase leading-tight">
-          HERITAGE<br />MEETS<br />WELLNESS
+          NATURE<br />MEETS<br />WELLNESS
         </span>
       </div>
 
@@ -72,20 +72,19 @@ export default function BotanicalHeritage() {
         {/* Header Tag, Main Headline & Subtitle */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-14 sm:mb-20">
           
-          {/* Top Johor Heritage Tag */}
+          {/* Top Tag */}
           <div className="inline-flex items-center gap-2 text-[#c59b3f] font-serif text-[11px] sm:text-xs font-bold tracking-[0.24em] uppercase">
             <span>|</span>
             <span className="text-[10px]">❖</span>
-            <span>JOHOR HERITAGE</span>
+            <span>A TRUE STORY OF HEALING</span>
             <span>|</span>
           </div>
 
           {/* Main Title */}
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-[46px] font-bold text-[#142319] leading-[1.18] tracking-tight">
-            A 1930 Botanical Heritage<br />
-            in Your{" "}
+            A Natural Gift From 1930 for Your{" "}
             <span className="italic font-serif font-medium text-[#c59b3f] drop-shadow-sm">
-              Modern Morning Cup
+              Everyday Energy &amp; Comfort
             </span>
           </h2>
 
@@ -94,7 +93,7 @@ export default function BotanicalHeritage() {
 
           {/* Subtitle */}
           <p className="text-[#5c6861] text-xs sm:text-[14px] font-medium leading-relaxed max-w-lg mx-auto">
-            From a legendary discovery to your daily ritual – crafted with heritage, backed by science.
+            From a family's miraculous healing to your daily morning routine — pure, comforting, and backed by caring science.
           </p>
 
         </div>
@@ -102,7 +101,7 @@ export default function BotanicalHeritage() {
         {/* 4 Connected Milestone Cards Grid */}
         <div className="relative">
           
-          {/* Connecting Gold Line across top badges (Visible on Desktop) */}
+          {/* Connecting Gold Line across top badges */}
           <div className="hidden lg:block absolute top-[18px] left-[10%] right-[10%] h-[2px] bg-[#d9a74a]/40 z-0" />
 
           {/* The 4 Cards */}
@@ -121,7 +120,7 @@ export default function BotanicalHeritage() {
                     </div>
                   </div>
 
-                  {/* Subtitle (Year / Category) */}
+                  {/* Subtitle */}
                   <div className="text-center">
                     <span className="text-[11px] sm:text-xs font-bold tracking-[0.14em] text-[#c59b3f] uppercase font-sans">
                       {item.subtitle}
@@ -155,14 +154,14 @@ export default function BotanicalHeritage() {
 
         </div>
 
-        {/* Bottom Quote / Heritage Mission Callout */}
+        {/* Bottom Quote / Mission Callout */}
         <div className="mt-14 sm:mt-18 text-center max-w-4xl mx-auto px-4">
           <div className="inline-flex items-center gap-3 text-xs sm:text-[13.5px] text-[#55635b] font-medium leading-relaxed font-sans">
             <span className="text-[#c59b3f] font-serif text-2xl sm:text-3xl font-light leading-none">
               &#123;
             </span>
             <p className="max-w-2xl mx-auto italic font-sans text-[#4f5d55]">
-              Honoring the legacy of Tuan Ismail and Tuan Saipullah, Kopi Herba empowers modern busy individuals to enjoy the benefits of black turmeric every morning with rich aroma and delightful taste.
+              “No one deserves to live with constant knee aches, tired mornings, or uncomfortable bloating. Our family’s goal is simple: to help you wake up feeling lighter, happier, and full of life for the people you love.”
             </p>
             <span className="text-[#c59b3f] font-serif text-2xl sm:text-3xl font-light leading-none">
               &#125;

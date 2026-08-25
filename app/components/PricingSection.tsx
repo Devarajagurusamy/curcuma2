@@ -42,26 +42,30 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                 HEALING ROUTINE
               </h2>
 
+              <p className="text-xs text-[#525f57] mt-2 leading-relaxed">
+                Take the first step toward pain-free mornings and vibrant daily energy.
+              </p>
+
               {/* Guarantees List */}
-              <div className="space-y-3 mt-4 sm:mt-8">
+              <div className="space-y-3 mt-4 sm:mt-6">
                 <div className="flex items-center gap-2.5 text-xs sm:text-[13px] font-bold text-[#233329]">
-                  <Check className="w-4 h-4 text-[#142319] stroke-[2.5] flex-shrink-0" />
+                  <Check className="w-4 h-4 text-emerald-700 stroke-[2.5] flex-shrink-0" />
                   <span>30-Day Money Back Guarantee</span>
                 </div>
 
                 <div className="flex items-center gap-2.5 text-xs sm:text-[13px] font-bold text-[#233329]">
-                  <Check className="w-4 h-4 text-[#142319] stroke-[2.5] flex-shrink-0" />
-                  <span>Free Shipping (WM)</span>
+                  <Check className="w-4 h-4 text-emerald-700 stroke-[2.5] flex-shrink-0" />
+                  <span>Free Home Delivery (West Malaysia)</span>
                 </div>
 
                 <div className="flex items-center gap-2.5 text-xs sm:text-[13px] font-bold text-[#233329]">
-                  <Check className="w-4 h-4 text-[#142319] stroke-[2.5] flex-shrink-0" />
-                  <span>COD Available</span>
+                  <Check className="w-4 h-4 text-emerald-700 stroke-[2.5] flex-shrink-0" />
+                  <span>Pay at Doorstep (COD Available)</span>
                 </div>
 
                 <div className="flex items-center gap-2.5 text-xs sm:text-[13px] font-bold text-[#233329]">
-                  <Check className="w-4 h-4 text-[#142319] stroke-[2.5] flex-shrink-0" />
-                  <span>Secure Payments</span>
+                  <Check className="w-4 h-4 text-emerald-700 stroke-[2.5] flex-shrink-0" />
+                  <span>100% Safe &amp; Secure Checkout</span>
                 </div>
               </div>
             </div>
@@ -75,7 +79,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                   <ShieldCheck className="w-4 h-4 stroke-[1.8]" />
                 </div>
                 <span className="text-[10px] sm:text-[11px] font-bold text-[#142319] leading-tight">
-                  100%<br />Authentic
+                  100% Pure<br />&amp; Clean
                 </span>
               </div>
 
@@ -85,7 +89,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                   <Truck className="w-4 h-4 stroke-[1.8]" />
                 </div>
                 <span className="text-[10px] sm:text-[11px] font-bold text-[#142319] leading-tight">
-                  Fast<br />Delivery
+                  Fast, Gentle<br />Delivery
                 </span>
               </div>
 
@@ -95,7 +99,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                   <UserCheck className="w-4 h-4 stroke-[1.8]" />
                 </div>
                 <span className="text-[10px] sm:text-[11px] font-bold text-[#142319] leading-tight">
-                  Doctor<br />Trusted
+                  Loved &amp;<br />Trusted
                 </span>
               </div>
 
@@ -112,7 +116,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                 1 BOTTLE
               </h3>
               <p className="text-xs text-[#637067] font-medium mt-0.5">
-                60 Capsules
+                60 Capsules • 1-Month Trial
               </p>
             </div>
 
@@ -134,7 +138,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                 <span className="text-2xl font-black text-[#142319] tracking-tight">159.90</span>
                 <span className="text-xs text-gray-400 line-through">RM179.90</span>
               </div>
-              <div className="text-[11px] font-extrabold text-[#142319] uppercase tracking-wider">
+              <div className="text-[11px] font-extrabold text-emerald-800 uppercase tracking-wider">
                 SAVE RM20
               </div>
 
@@ -157,7 +161,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
             
             {/* Top Ribbon */}
             <div className="w-full bg-[#c58b28] text-white text-[11px] font-bold tracking-[0.18em] uppercase py-2 text-center rounded-t-[14px]">
-              MOST POPULAR
+              MOST POPULAR • FULL RECOVERY
             </div>
 
             <div className="p-5 sm:p-6 flex flex-col justify-between flex-1">
@@ -167,7 +171,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                   3 BOTTLES
                 </h3>
                 <p className="text-xs text-[#637067] font-medium mt-0.5">
-                  180 Capsules
+                  180 Capsules • 3-Month Deep Care
                 </p>
               </div>
 
@@ -189,8 +193,8 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                   <span className="text-2xl sm:text-3xl font-black text-[#142319] tracking-tight">399.90</span>
                   <span className="text-xs text-gray-400 line-through">RM539.70</span>
                 </div>
-                <div className="text-[11px] font-extrabold text-[#142319] uppercase tracking-wider">
-                  SAVE RM139.80
+                <div className="text-[11px] font-extrabold text-emerald-800 uppercase tracking-wider">
+                  SAVE RM139.80 (BEST VALUE)
                 </div>
 
                 {/* Solid Gold ORDER NOW Button */}
@@ -217,7 +221,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                 2 BOTTLES
               </h3>
               <p className="text-xs text-[#637067] font-medium mt-0.5">
-                120 Capsules
+                120 Capsules • 2-Month Routine
               </p>
             </div>
 
@@ -239,7 +243,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                 <span className="text-2xl font-black text-[#142319] tracking-tight">299.90</span>
                 <span className="text-xs text-gray-400 line-through">RM359.80</span>
               </div>
-              <div className="text-[11px] font-extrabold text-[#142319] uppercase tracking-wider">
+              <div className="text-[11px] font-extrabold text-emerald-800 uppercase tracking-wider">
                 SAVE RM59.90
               </div>
 
@@ -263,7 +267,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
             {/* Recommended Dosage */}
             <div>
               <h4 className="text-[12px] sm:text-[13px] font-bold text-[#c58b28] tracking-wider uppercase font-sans">
-                RECOMMENDED<br />DOSAGE
+                HOW TO TAKE FOR<br />BEST RESULTS
               </h4>
               
               <div className="flex items-start gap-3 mt-3 sm:mt-4">
@@ -271,8 +275,8 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                   <Pill className="w-4 h-4 text-[#c58b28]" />
                 </div>
                 <div className="text-xs text-[#28382e] font-semibold leading-snug">
-                  2 capsules (900mg)<br />
-                  <span className="font-normal text-[#5c6861]">once daily with food.</span>
+                  2 capsules daily<br />
+                  <span className="font-normal text-[#5c6861]">Take after breakfast with a warm glass of water.</span>
                 </div>
               </div>
             </div>
@@ -280,10 +284,10 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
             {/* Precaution */}
             <div className="pt-3 sm:pt-4 border-t border-[#e8ded0]">
               <h4 className="text-[12px] sm:text-[13px] font-bold text-[#c58b28] tracking-wider uppercase font-sans">
-                PRECAUTION
+                GENTLE CARE NOTE
               </h4>
               <p className="text-[11px] sm:text-xs text-[#5c6861] leading-relaxed mt-1.5 sm:mt-2 font-normal">
-                If you are pregnant, breastfeeding or taking medication, consult your healthcare professional before use.
+                If you are pregnant, nursing, or taking prescription medicine, we always recommend consulting your doctor first.
               </p>
             </div>
 

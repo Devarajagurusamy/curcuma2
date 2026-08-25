@@ -18,7 +18,7 @@ const testimonials: Testimonial[] = [
     name: "Puan Halimah",
     age: 52,
     location: "Johor Bahru",
-    quote: "“Sakit lutut saya banyak berkurang. Bangun pagi lebih ringan dan bertenaga.”",
+    quote: "“My knee pain used to keep me from playing with my grandkids. Now my knees feel so much lighter, and I wake up every morning with a smile.”",
     avatar: "/images/avatar-1.jpg",
   },
   {
@@ -26,7 +26,7 @@ const testimonials: Testimonial[] = [
     name: "Encik Farid",
     age: 45,
     location: "Kuala Lumpur",
-    quote: "“Ambil 2 kapsul setiap hari. Badan rasa lebih ringan dan fokus kerja meningkat.”",
+    quote: "“After long work days, I used to feel totally drained. Taking 2 capsules daily gave me back my energy to enjoy evenings with my children.”",
     avatar: "/images/avatar-2.jpg",
   },
   {
@@ -34,15 +34,15 @@ const testimonials: Testimonial[] = [
     name: "Nurul A.",
     age: 28,
     location: "Shah Alam",
-    quote: "“Period pain saya dah tak separah dulu. Sekarang lebih selesa setiap bulan.”",
+    quote: "“My monthly cramps used to leave me stuck in bed in tears. Now my cycle is smooth, gentle, and I feel comfortable all month.”",
     avatar: "/images/avatar-3.jpg",
   },
   {
     id: "4",
-    name: "Dr. Tan Wei Lun",
-    age: 39,
+    name: "Uncle Tan",
+    age: 64,
     location: "Penang",
-    quote: "“Kandungan ar-Curcumene 14.8% terbukti membantu mengawal bacaan gula dan keradangan saya.”",
+    quote: "“My morning finger stiffness and sugar levels bothered me for years. Black turmeric has been such a blessing for my daily peace of mind.”",
     avatar: "/images/avatar-2.jpg",
   },
   {
@@ -50,7 +50,7 @@ const testimonials: Testimonial[] = [
     name: "Puan Rosnah",
     age: 58,
     location: "Ipoh",
-    quote: "“Masalah angin dan perut kembung reda dalam seminggu. Kualiti tidur pun makin baik.”",
+    quote: "“Trapped stomach wind and bloating made me afraid to eat. Within a week, my tummy felt calm, and I finally sleep peacefully through the night.”",
     avatar: "/images/avatar-1.jpg",
   },
   {
@@ -58,7 +58,7 @@ const testimonials: Testimonial[] = [
     name: "Haji Zulkifli",
     age: 61,
     location: "Melaka",
-    quote: "“Alhamdulillah pergerakan sendi lebih lancar bila solat. Herba kunyit hitam yang asli.”",
+    quote: "“Alhamdulillah, bending my knees during daily prayers feels smooth and painless again. Pure, natural herbs that truly care for your body.”",
     avatar: "/images/avatar-2.jpg",
   },
 ];
@@ -115,12 +115,12 @@ export default function Testimonials() {
             
             {/* Category Tag */}
             <div className="text-[11px] sm:text-xs font-bold tracking-[0.18em] text-[#d9a74a] uppercase font-sans">
-              REAL PEOPLE. REAL RESULTS.
+              REAL PEOPLE • REAL RELIEF
             </div>
 
             {/* Main Headline */}
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-bold text-white leading-tight tracking-tight">
-              Loved By Malaysians
+              Loved by Malaysian Families
             </h2>
 
             {/* Ratings Summary */}
@@ -141,7 +141,7 @@ export default function Testimonials() {
 
               {/* Verified Count */}
               <div className="text-xs text-[#9ab3a3] font-medium mt-2">
-                482 Verified Reviews
+                482 Grateful Customer Stories
               </div>
             </div>
 

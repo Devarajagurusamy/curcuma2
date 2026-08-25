@@ -20,9 +20,9 @@ interface BenefitCard {
 const scientificBenefits: BenefitCard[] = [
   {
     number: "01",
-    title: "2x ar–Curcumene (14.8%)",
+    title: "Twice as Powerful as Regular Turmeric",
     description:
-      "Double the active therapeutic concentration of yellow turmeric for rapid bioavailability.",
+      "Absorbs faster and goes deeper to soothe your body and restore vitality where you need it most.",
     icon: (
       <svg className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
         <circle cx="16" cy="16" r="4.5" strokeDasharray="1 1" />
@@ -41,9 +41,9 @@ const scientificBenefits: BenefitCard[] = [
   },
   {
     number: "02",
-    title: "Joint & Cartilage Defense",
+    title: "Comfortable Knees & Easy Movement",
     description:
-      "Inhibits inflammatory COX-2 pathways and protects bone and cartilage density.",
+      "Say goodbye to stiff, aching joints so you can walk, bend, pray, and play with your family with ease.",
     icon: (
       <svg className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
         {/* Joint Bones */}
@@ -59,9 +59,9 @@ const scientificBenefits: BenefitCard[] = [
   },
   {
     number: "03",
-    title: "Blood Glucose Stability",
+    title: "Steady Blood Sugar & Lasting Energy",
     description:
-      "Helps regulate post-meal glucose spikes and reduces sluggish after-meal fatigue.",
+      "Prevents that heavy, sleepy feeling after meals and keeps your daily energy smooth all day long.",
     icon: (
       <svg className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
         {/* Blood Drop */}
@@ -75,9 +75,9 @@ const scientificBenefits: BenefitCard[] = [
   },
   {
     number: "04",
-    title: "Liver & Kidney Protection",
+    title: "Loving Care for Liver & Kidneys",
     description:
-      "Non-genotoxic antioxidants shield internal filtration organs from chemical and drug toxicity.",
+      "Gently cleanses and shields your vital organs from daily stress, heavy foods, and long-term medications.",
     icon: (
       <svg className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
         {/* Organ Shield Contour */}
@@ -91,9 +91,9 @@ const scientificBenefits: BenefitCard[] = [
   },
   {
     number: "05",
-    title: "Thrombolytic Blood Flow",
+    title: "Smooth, Healthy Blood Circulation",
     description:
-      "Promotes clean, unobstructed vascular circulation for cardiovascular wellness.",
+      "Keeps your blood flowing smoothly so your hands, feet, and whole body feel warm and energized.",
     icon: (
       <svg className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
         {/* Vascular Artery Tube */}
@@ -109,9 +109,9 @@ const scientificBenefits: BenefitCard[] = [
   },
   {
     number: "06",
-    title: "Antispasmodic Cramp Relief",
+    title: "Gentle Relief from Cramps & Tightness",
     description:
-      "Relaxes smooth muscle fibers to relieve painful menstrual and abdominal cramps.",
+      "Naturally relaxes tight muscles to soothe monthly period pain and uncomfortable stomach cramps.",
     icon: (
       <svg className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
         {/* Torso / Abdomen Silhouette */}
@@ -125,9 +125,9 @@ const scientificBenefits: BenefitCard[] = [
   },
   {
     number: "07",
-    title: "Digestive & IBS Soothing",
+    title: "Happy Tummy & Goodbye Bloating",
     description:
-      "Calms trapped stomach gas, acid reflux, bloating, and irregular bowel discomfort.",
+      "Quickly calms trapped wind, indigestion, and acid burn so you can enjoy meals with peace of mind.",
     icon: (
       <svg className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
         {/* Stomach / GI Tract */}
@@ -138,9 +138,9 @@ const scientificBenefits: BenefitCard[] = [
   },
   {
     number: "08",
-    title: "Brain Focus & Anti–Brain Fog",
+    title: "Clear Mind & Sharp Focus",
     description:
-      "Shields brain neurons against oxidative stress for sharper memory and mental clarity.",
+      "Lifts morning brain fog, strengthens your memory, and keeps you alert and refreshed all day.",
     icon: (
       <svg className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
         {/* Brain Left & Right Lobes */}
@@ -153,9 +153,9 @@ const scientificBenefits: BenefitCard[] = [
   },
   {
     number: "09",
-    title: "Broad–Spectrum Immune Shield",
+    title: "Strong Everyday Family Immunity",
     description:
-      "Natural antibacterial and antiviral properties strengthen year-round bodily defenses.",
+      "Naturally strengthens your body's daily defenses so you stay resilient, healthy, and active.",
     icon: (
       <svg className="w-8 h-8 text-[#d9a74a] stroke-current fill-none stroke-[1.8]" viewBox="0 0 32 32">
         {/* Shield */}
@@ -189,15 +189,15 @@ export default function ScientificBenefits() {
           <div className="inline-flex items-center gap-2 text-[#c59b3f] font-serif text-[11px] sm:text-xs font-bold tracking-[0.24em] uppercase">
             <span>—</span>
             <span className="text-[10px]">❖</span>
-            <span>SCIENCE BACKED BENEFITS</span>
+            <span>FEEL THE DIFFERENCE EVERY DAY</span>
             <span className="text-[10px]">❖</span>
             <span>—</span>
           </div>
 
           {/* Main Headline */}
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-[45px] font-bold text-[#142319] leading-[1.18] tracking-tight">
-            Top 9 Scientific Benefits of<br />
-            <span className="text-[#c59b3f] font-serif">Curcuma Caesia</span> (Black Turmeric)
+            9 Simple Ways Black Turmeric<br />
+            Helps You <span className="text-[#c59b3f] font-serif">Feel Your Best</span>
           </h2>
 
           {/* Small gold floral ornament */}
@@ -205,7 +205,7 @@ export default function ScientificBenefits() {
 
           {/* Subtitle */}
           <p className="text-[#59665f] text-xs sm:text-[14px] font-medium leading-relaxed max-w-xl mx-auto">
-            Clinical and metabolomic studies confirm the biological superiority of authentic black turmeric over common yellow herbs.
+            Clear, proven natural benefits to help you move freely, digest peacefully, and live without daily discomfort.
           </p>
 
         </div>
