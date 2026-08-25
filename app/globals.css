@@ -59,4 +59,12 @@ body {
   animation-play-state: paused;
 }
 
+.animate-marquee-smooth {
+  animation: marquee 22s linear infinite;
+}
+
+.animate-marquee-smooth:hover {
+  animation-play-state: paused;
+}
+
 

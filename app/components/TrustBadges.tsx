@@ -7,85 +7,76 @@ import { useLanguage } from "../context/LanguageContext";
 export default function TrustBadges() {
   const { t } = useLanguage();
 
+  const badges = [
+    {
+      icon: Leaf,
+      title: t.trustBadges.badge1Title,
+      sub: t.trustBadges.badge1Sub,
+    },
+    {
+      icon: FlaskConical,
+      title: t.trustBadges.badge2Title,
+      sub: t.trustBadges.badge2Sub,
+    },
+    {
+      icon: Leaf,
+      title: t.trustBadges.badge3Title,
+      sub: t.trustBadges.badge3Sub,
+    },
+    {
+      icon: ShieldCheck,
+      title: t.trustBadges.badge4Title,
+      sub: t.trustBadges.badge4Sub,
+    },
+    {
+      icon: Award,
+      title: t.trustBadges.badge5Title,
+      sub: t.trustBadges.badge5Sub,
+    },
+  ];
+
   return (
     <section className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 xl:px-12 py-3">
-      {/* Trust & Quality Pillars Bar */}
-      <div className="p-4 sm:p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-[#ede1d3] shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-6 items-center justify-between">
+      {/* Trust & Quality Pillars Bar with Endless Loop Animation */}
+      <div className="py-3.5 px-4 sm:px-6 rounded-2xl bg-white/95 backdrop-blur-md border border-[#ede1d3] shadow-[0_4px_20px_rgba(0,0,0,0.03)] overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,black_3%,black_97%,transparent_100%)]">
+        <div className="flex w-max animate-marquee-smooth hover:[animation-play-state:paused] cursor-grab active:cursor-grabbing select-none">
           
-          {/* Pillar 1: Backed by Real Science */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#FAF6F0] border border-[#e8dac8] flex items-center justify-center text-[#c59b3f] flex-shrink-0 shadow-sm">
-              <Leaf className="w-4 h-4 stroke-[1.8]" />
-            </div>
-            <div>
-              <div className="text-xs font-bold text-[#142319] leading-tight">
-                {t.trustBadges.badge1Title}
+          {/* Track 1 */}
+          <div className="flex items-center gap-8 sm:gap-14 pr-8 sm:pr-14">
+            {badges.map((b, idx) => (
+              <div key={`track1-${idx}`} className="flex items-center gap-3 whitespace-nowrap flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#FAF6F0] border border-[#e8dac8] flex items-center justify-center text-[#c59b3f] flex-shrink-0 shadow-sm">
+                  <b.icon className="w-4 h-4 stroke-[1.8]" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-[#142319] leading-tight">
+                    {b.title}
+                  </div>
+                  <div className="text-[10px] text-[#616e66] leading-tight mt-0.5">
+                    {b.sub}
+                  </div>
+                </div>
               </div>
-              <div className="text-[10px] text-[#616e66] leading-tight mt-0.5">
-                {t.trustBadges.badge1Sub}
-              </div>
-            </div>
+            ))}
           </div>
 
-          {/* Pillar 2: Deep Daily Relief */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#FAF6F0] border border-[#e8dac8] flex items-center justify-center text-[#c59b3f] flex-shrink-0 shadow-sm">
-              <FlaskConical className="w-4 h-4 stroke-[1.8]" />
-            </div>
-            <div>
-              <div className="text-xs font-bold text-[#142319] leading-tight">
-                {t.trustBadges.badge2Title}
+          {/* Track 2 (Duplicate for Seamless Infinite Loop) */}
+          <div className="flex items-center gap-8 sm:gap-14 pr-8 sm:pr-14" aria-hidden="true">
+            {badges.map((b, idx) => (
+              <div key={`track2-${idx}`} className="flex items-center gap-3 whitespace-nowrap flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#FAF6F0] border border-[#e8dac8] flex items-center justify-center text-[#c59b3f] flex-shrink-0 shadow-sm">
+                  <b.icon className="w-4 h-4 stroke-[1.8]" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-[#142319] leading-tight">
+                    {b.title}
+                  </div>
+                  <div className="text-[10px] text-[#616e66] leading-tight mt-0.5">
+                    {b.sub}
+                  </div>
+                </div>
               </div>
-              <div className="text-[10px] text-[#616e66] leading-tight mt-0.5">
-                {t.trustBadges.badge2Sub}
-              </div>
-            </div>
-          </div>
-
-          {/* Pillar 3: 100% Pure & Natural */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#FAF6F0] border border-[#e8dac8] flex items-center justify-center text-[#c59b3f] flex-shrink-0 shadow-sm">
-              <Leaf className="w-4 h-4 stroke-[1.8]" />
-            </div>
-            <div>
-              <div className="text-xs font-bold text-[#142319] leading-tight">
-                {t.trustBadges.badge3Title}
-              </div>
-              <div className="text-[10px] text-[#616e66] leading-tight mt-0.5">
-                {t.trustBadges.badge3Sub}
-              </div>
-            </div>
-          </div>
-
-          {/* Pillar 4: Safe & Gentle */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#FAF6F0] border border-[#e8dac8] flex items-center justify-center text-[#c59b3f] flex-shrink-0 shadow-sm">
-              <ShieldCheck className="w-4 h-4 stroke-[1.8]" />
-            </div>
-            <div>
-              <div className="text-xs font-bold text-[#142319] leading-tight">
-                {t.trustBadges.badge4Title}
-              </div>
-              <div className="text-[10px] text-[#616e66] leading-tight mt-0.5">
-                {t.trustBadges.badge4Sub}
-              </div>
-            </div>
-          </div>
-
-          {/* Pillar 5: Crafted with Care */}
-          <div className="flex items-center gap-3 col-span-2 md:col-span-1">
-            <div className="w-10 h-10 rounded-full bg-[#FAF6F0] border border-[#e8dac8] flex items-center justify-center text-[#c59b3f] flex-shrink-0 shadow-sm">
-              <Award className="w-4 h-4 stroke-[1.8]" />
-            </div>
-            <div>
-              <div className="text-xs font-bold text-[#142319] leading-tight">
-                {t.trustBadges.badge5Title}
-              </div>
-              <div className="text-[10px] text-[#616e66] leading-tight mt-0.5">
-                {t.trustBadges.badge5Sub}
-              </div>
-            </div>
+            ))}
           </div>
 
         </div>
