@@ -8,7 +8,8 @@ import {
   UserCheck, 
   Pill, 
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  ShoppingBag
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -146,11 +147,9 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
               {/* Solid Gold ORDER NOW Button */}
               <button
                 onClick={() => handleOrder("1-bottle")}
-                className="w-full py-3 rounded-xl bg-[#c58b28] hover:bg-[#b0781e] text-white text-xs font-extrabold tracking-[0.08em] uppercase shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2 active:scale-98"
+                className="w-full py-3.5 rounded-xl bg-[#c58b28] hover:bg-[#b0781e] text-white text-xs font-extrabold tracking-[0.08em] uppercase shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2 active:scale-98 group"
               >
-                <span className="w-3.5 h-3.5 rounded-full bg-white/20 flex items-center justify-center text-[9px] font-black text-white">
-                  ★
-                </span>
+                <ShoppingBag className="w-4 h-4 text-white stroke-[2.2] group-hover:scale-110 transition-transform duration-200" />
                 <span>{t.pricing.orderNow}</span>
               </button>
             </div>
@@ -201,11 +200,9 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
                 {/* Solid Gold ORDER NOW Button */}
                 <button
                   onClick={() => handleOrder("3-bottles")}
-                  className="w-full py-3.5 rounded-xl bg-[#c58b28] hover:bg-[#b0781e] text-white text-xs font-extrabold tracking-[0.08em] uppercase shadow-[0_4px_16px_rgba(197,139,40,0.4)] hover:shadow-[0_6px_22px_rgba(197,139,40,0.55)] transition-all cursor-pointer flex items-center justify-center gap-2 active:scale-98"
+                  className="w-full py-3.5 rounded-xl bg-[#c58b28] hover:bg-[#b0781e] text-white text-xs font-extrabold tracking-[0.08em] uppercase shadow-[0_4px_16px_rgba(197,139,40,0.4)] hover:shadow-[0_6px_22px_rgba(197,139,40,0.55)] transition-all cursor-pointer flex items-center justify-center gap-2 active:scale-98 group"
                 >
-                  <span className="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center text-[10px] font-black text-white">
-                    ★
-                  </span>
+                  <ShoppingBag className="w-4 h-4 text-white stroke-[2.2] group-hover:scale-110 transition-transform duration-200" />
                   <span>{t.pricing.orderNow}</span>
                 </button>
               </div>
@@ -251,11 +248,9 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
               {/* Solid Gold ORDER NOW Button */}
               <button
                 onClick={() => handleOrder("2-bottles")}
-                className="w-full py-3 rounded-xl bg-[#c58b28] hover:bg-[#b0781e] text-white text-xs font-extrabold tracking-[0.08em] uppercase shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2 active:scale-98"
+                className="w-full py-3.5 rounded-xl bg-[#c58b28] hover:bg-[#b0781e] text-white text-xs font-extrabold tracking-[0.08em] uppercase shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2 active:scale-98 group"
               >
-                <span className="w-3.5 h-3.5 rounded-full bg-white/20 flex items-center justify-center text-[9px] font-black text-white">
-                  ★
-                </span>
+                <ShoppingBag className="w-4 h-4 text-white stroke-[2.2] group-hover:scale-110 transition-transform duration-200" />
                 <span>{t.pricing.orderNow}</span>
               </button>
             </div>

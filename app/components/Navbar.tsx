@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { 
   ShoppingCart,
+  ShoppingBag,
   Menu, 
   X,
   Globe
@@ -155,11 +156,9 @@ export default function Navbar({ onOpenOrderModal }: NavbarProps) {
           {/* Solid Gold ORDER NOW CTA Button (Opens Order Popup) */}
           <button
             onClick={onOpenOrderModal}
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#c59b3f] hover:bg-[#b08730] text-white text-xs xl:text-sm font-extrabold tracking-[0.08em] uppercase shadow-[0_2px_12px_rgba(197,155,63,0.35)] hover:shadow-[0_4px_18px_rgba(197,155,63,0.55)] hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 cursor-pointer whitespace-nowrap"
+            className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-[#c58b28] hover:bg-[#b0781e] text-white text-xs xl:text-[13px] font-extrabold tracking-[0.08em] uppercase shadow-[0_4px_16px_rgba(197,139,40,0.35)] hover:shadow-[0_6px_22px_rgba(197,139,40,0.5)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer whitespace-nowrap group"
           >
-            <span className="w-4 h-4 rounded-full bg-white/25 flex items-center justify-center text-[10px] font-black text-white">
-              ★
-            </span>
+            <ShoppingBag className="w-4 h-4 text-white stroke-[2.2] group-hover:scale-110 transition-transform duration-200" />
             <span>{t.nav.orderNow}</span>
           </button>
 
@@ -268,9 +267,10 @@ export default function Navbar({ onOpenOrderModal }: NavbarProps) {
                 setMobileMenuOpen(false);
                 if (onOpenOrderModal) onOpenOrderModal();
               }}
-              className="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-full bg-[#c59b3f] text-white text-xs font-bold tracking-wider uppercase shadow-md cursor-pointer"
+              className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-full bg-[#c58b28] hover:bg-[#b0781e] text-white text-xs font-bold tracking-wider uppercase shadow-md cursor-pointer group transition-all"
             >
-              <span>★ {t.nav.orderNow}</span>
+              <ShoppingBag className="w-4 h-4 stroke-[2.2] group-hover:scale-110 transition-transform duration-200" />
+              <span>{t.nav.orderNow}</span>
             </button>
           </div>
 
